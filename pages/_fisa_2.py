@@ -13,6 +13,10 @@ from mailmerge import MailMerge
 from difflib import get_close_matches
 import pickle
 import string
+from auth_simple import require_login
+name, user = require_login("🔐 App Login")
+st.title("Dashboard")
+st.success(f"Welcome, {name}!")
 #from docx import Document
 
 def preprocess(text):
