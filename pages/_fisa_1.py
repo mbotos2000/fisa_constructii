@@ -415,7 +415,9 @@ if 'test_aplicatie' not in st.session_state:
     st.session_state['test_aplicatie']=False
 if 'ut' not in st.session_state:
     st.session_state['ut']=False
-
+name, user = require_login("🔐 App Login")
+st.title("Dashboard")
+st.success(f"Welcome, {name}!")
 keys_none=['cap2','cap3','cap4','resetare' ,'file','M_8_1_o1','M_8_1_mp1','M_8_1_o','M_8_1_mp']
 for key in keys_none:
     st.session_state.setdefault(key, None)
