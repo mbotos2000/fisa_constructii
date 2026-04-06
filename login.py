@@ -27,6 +27,5 @@ name, user = require_login("🔐 App Login")
 st.title("Dashboard")
 st.success(f"Welcome, {name}!")
 
-
-f st.button("Deschide informații"):
+st.button("Deschide informații"):
     info()
