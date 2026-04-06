@@ -638,8 +638,9 @@ def show_pdf_modal(pdf_bytes):
             padding: 15px;
             border-radius: 10px;
             position: relative;
+            overflow: hidden;
         ">
-            <!-- Close button -->
+
             <button onclick="document.getElementById('pdf_modal').remove()" 
                     style="
                         position: absolute;
@@ -650,11 +651,16 @@ def show_pdf_modal(pdf_bytes):
                         border: none;
                         border-radius: 5px;
                         cursor: pointer;
+                        z-index: 100000;
                     ">
                 Close
             </button>
 
-            data:application/pdf;base64,{b64_pdf}
+            <iframe 
+                src="data:application/pdf;base64,{b64_pdf}"
+                style="width:100%; height:100%; border:none;"
+            ></iframe>
+
         </div>
     </div>
     """
