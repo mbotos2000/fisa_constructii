@@ -626,36 +626,7 @@ def load_ftp_pdf_file(presc):
     
     return file_data  # return stream, NOT file_data.read()
 
-def show_pdf_modal(pdf_bytes):
-    b64_pdf = base64.b64encode(pdf_bytes).decode("utf-8")
 
-    modal_html = f"""
-    <div style="
-        position: fixed;
-        top: 0; left: 0;
-        width: 100%; height: 100%;
-        background-color: rgba(0,0,0,0.5);
-        z-index: 9999;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    ">
-        <div style="
-            width: 80%; height: 80%;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-        ">
-            data:application/pdf;base64,{b64_pdf}
-            <br><br>
-            <button onclick="document.body.removeChild(this.parentNode.parentNode)">
-                Închide
-            </button>
-        </div>
-    </div>
-    """
-
-    st.markdown(modal_html, unsafe_allow_html=True)
 def load_pkl_from_ftp(file_path):
    
         #ftp = ftplib.FTP("users.utcluj.ro", st.secrets['u'], st.secrets['p'])
@@ -944,7 +915,7 @@ if not(st.session_state['ut']):
                st.text_area('4.2 Preconditii de competente',value=data_fis['M_4_2'],key='M_4_2',placeholder="Completati manual. Aplicatia nu a reusit sa identifice text in fisa incarcata!")
                st.text_area('5.1 Conditii de desfasurare a cursului',value=data_fis['M_5_1'],key='M_5_1',placeholder="Completati manual. Aplicatia nu a reusit sa identifice text in fisa incarcata!")        
                st.text_area('5.2 Conditii de desfasurare a aplicatiilor',value=data_fis['M_5_2'],key='M_5_2',placeholder="Completati manual. Aplicatia nu a reusit sa identifice text in fisa incarcata!")
-               with st.expander("Arată prezentarea planului de invatamant pentru mai multe informatii"):
+               with st.expander("Arată prezentarea planului de invatamant pentru a completa urmatoarea sectiune in concordanta cu principiile definite in misiunea specializarii pentru care scriu aceasta fisa"):
                   pdf_stream=(load_ftp_pdf_file(pres[st.session_state['M_1_6']]))
                   st.pdf(pdf_stream)
                add_selectbox_cp = st.multiselect('6.a Competente profesionale acumulate',c_spec,help='Pot fi alese oricate competente.')
