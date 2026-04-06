@@ -653,6 +653,8 @@ data1['specializare'] = data1['specializare'].apply(strip_last)
 lista_ci=['Licenta', 'Master']
 lista_ci=my_function(lista_ci)
 st.header("Aplicatie generare fisa disciplinei folosind variante anterioare salvate in baza de date a Facultatii de constructii", divider="gray")
+if st.button("Apasa aici daca nu este afisata nici o optiune de continuare"):
+	st.session_state['ut']=False
 if not(st.session_state['ut']):
     add_selectbox_C = st.selectbox(
                 'Ciclul de studii?',
