@@ -5,3 +5,4 @@ pandas
 protobuf==3.20.0
 streamlit
 openpyxl
+streamlit-pdf
