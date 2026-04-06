@@ -929,7 +929,7 @@ if not(st.session_state['ut']):
                   pdf_stream=(load_ftp_pdf_file(pres[st.session_state['M_1_6']]))
                   st.pdf(pdf_stream)
                except:
-				   pass
+                  pass
                add_selectbox_cp = st.multiselect('6.a Competente profesionale acumulate',c_spec,help='Pot fi alese oricate competente.')
 			                           
                ss=''
