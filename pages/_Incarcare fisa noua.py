@@ -419,7 +419,7 @@ keys_space=['','M_1_2','M_1_3','M_1_4','M_1_5','M_1_6','M_1_8','M_2_1','M_2_2','
 	    'M_8_2_2','M_8_2_3','M_8_2_4','M_8_2_5','M_8_2_6','M_8_2_7','M_8_2_8','M_8_2_9','M_8_2_10','M_8_2_11','M_8_2_12','M_8_2_13','M_8_2_14',
 	    '8_1_mp','8_1_o','Biblio_a','9','10_1_c','10_2_c','10_3_c','10_1_a','10_2_a','10_3_a','10_6','da_cu','data_dep','data_fac','dir_dep','tip','mail','dep']
 for key in keys_space:
-    st.session_state.setdefault(key, '')
+    st.session_state.setdefault(key, "")
 ver={
     'examen':'E',
     'verificare':'V',
