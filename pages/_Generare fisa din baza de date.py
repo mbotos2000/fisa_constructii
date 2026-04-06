@@ -618,20 +618,38 @@ def load_ftp_pdf_file(presc):
     # Return downloaded files
     return file_data.read()
 
-def show_pdf_dialog(pdf_bytes):
-    """Display PDF bytes in a Streamlit dialog window."""
+def show_pdf_modal(pdf_bytes):
     b64_pdf = base64.b64encode(pdf_bytes).decode("utf-8")
 
-    with st.dialog("PDF Preview"):
-        st.markdown(
-            f"""
+    modal_html = f"""
+    <div style="
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background-color: rgba(0,0,0,0.5);
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    ">
+        <div style="
+            width: 80%; height: 80%;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+        ">
             <iframe src="data:application/pdf;base64,{b64_pdf}"
-                    width="100%" height="600px">
+                    width="100%" height="100%">
             </iframe>
-            """,
-            unsafe_allow_html=True,
-        )
-        st.button("Close")
+            <br><br>
+            <button onclick="document.body.removeChild(this.parentNode.parentNode)">
+                Închide
+            </button>
+        </div>
+    </div>
+    """
+
+    st.markdown(modal_html, unsafe_allow_html=True)
 def load_pkl_from_ftp(file_path):
    
         #ftp = ftplib.FTP("users.utcluj.ro", st.secrets['u'], st.secrets['p'])
@@ -915,7 +933,7 @@ if not(st.session_state['ut']):
             if st.session_state['cap4']!=None:
               with st.form('capitolul 4'):
                pdf_data = load_ftp_pdf_file(pres[st.session_state['M_1_6']])
-               show_pdf_dialog(pdf_data)             
+               show_pdf_modal(pdf_data)             
                st.text_area('4.1 Preconditii din curriculum',value=data_fis['M_4_1'],key='M_4_1',placeholder="Completati manual. Aplicatia nu a reusit sa identifice text in fisa incarcata!")
                st.text_area('4.2 Preconditii de competente',value=data_fis['M_4_2'],key='M_4_2',placeholder="Completati manual. Aplicatia nu a reusit sa identifice text in fisa incarcata!")
                st.text_area('5.1 Conditii de desfasurare a cursului',value=data_fis['M_5_1'],key='M_5_1',placeholder="Completati manual. Aplicatia nu a reusit sa identifice text in fisa incarcata!")        
