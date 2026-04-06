@@ -15,6 +15,15 @@ import pickle
 import string
 from auth_simple import require_login
 #from docx import Document
+
+def pdf_to_base64(pdf_file):
+    """Convert a PDF file to a base64 string."""
+    return base64.b64encode(pdf_file.read()).decode("utf-8")
+
+def show_pdf_dialog(pdf_file):
+    """Display a PDF inside a Streamlit dialog window."""
+    pdf_base64 = pdf_to_base64(pdf_file)
+
 def preprocess(text):
     return text.strip().lower().translate(str.maketrans('', '', string.punctuation))
 
@@ -598,6 +607,23 @@ def load_ftp_file():
         docx_files["fisa_template_Mail_aplicatie_eng.docx"],
         csv_data["lista_cd.csv"],pkl_files
     )
+def load_ftp_pdf_file(presc):
+    # Establish FTP connection
+
+    #ftp_server = ftplib.FTP("users.utcluj.ro", st.secrets['u'], st.secrets['p'])
+    ftp_server = ftplib.FTP_TLS("users.utcluj.ro")
+    ftp_server.login(user=st.secrets['u'], passwd=st.secrets['p'])
+    ftp_server.prot_p()
+    
+    ftp_server.encoding = "utf-8"  # Force UTF-8 encoding
+    ftp_server.cwd('./public_html')
+    file_data = BytesIO()
+    ftp_server.retrbinary(f"RETR prezentare_{presc}.pdf", file_data.write)
+    file_data.seek(0)  # Reset file pointer to the start
+    
+
+    # Return downloaded files
+    return file_data
 def load_pkl_from_ftp(file_path):
    
         #ftp = ftplib.FTP("users.utcluj.ro", st.secrets['u'], st.secrets['p'])
@@ -879,7 +905,8 @@ if not(st.session_state['ut']):
               schimba_M_3_7_f(slide_37f)              
               st.session_state['cap4']='1'            
             if st.session_state['cap4']!=None:
-              with st.form('capitolul 4'):             
+              with st.form('capitolul 4'):
+			   show_pdf_dialog(load_ftp_pdf_file(pres[st.session_state['M_1_6']]))
                st.text_area('4.1 Preconditii din curriculum',value=data_fis['M_4_1'],key='M_4_1',placeholder="Completati manual. Aplicatia nu a reusit sa identifice text in fisa incarcata!")
                st.text_area('4.2 Preconditii de competente',value=data_fis['M_4_2'],key='M_4_2',placeholder="Completati manual. Aplicatia nu a reusit sa identifice text in fisa incarcata!")
                st.text_area('5.1 Conditii de desfasurare a cursului',value=data_fis['M_5_1'],key='M_5_1',placeholder="Completati manual. Aplicatia nu a reusit sa identifice text in fisa incarcata!")        
