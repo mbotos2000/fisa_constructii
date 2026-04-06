@@ -20,9 +20,21 @@ def pdf_to_base64(pdf_file):
     """Convert a PDF file to a base64 string."""
     return base64.b64encode(pdf_file.read()).decode("utf-8")
 
-def show_pdf_dialog(pdf_file):
-    """Display a PDF inside a Streamlit dialog window."""
-    pdf_base64 = pdf_to_base64(pdf_file)
+
+def show_pdf_dialog(pdf_bytes):
+    """Display PDF bytes in a Streamlit dialog window."""
+    b64_pdf = base64.b64encode(pdf_bytes).decode("utf-8")
+
+    with st.dialog("PDF Preview"):
+        st.markdown(
+            f"""
+            <iframe src="data:application/pdf;base64,{b64_pdf}"
+                    width="100%" height="600px"></iframe>
+            """,
+            unsafe_allow_html=True,
+        )
+        st.button("Close")
+
 
 def preprocess(text):
     return text.strip().lower().translate(str.maketrans('', '', string.punctuation))
@@ -623,7 +635,7 @@ def load_ftp_pdf_file(presc):
     
 
     # Return downloaded files
-    return file_data
+    return file_data.read()
 def load_pkl_from_ftp(file_path):
    
         #ftp = ftplib.FTP("users.utcluj.ro", st.secrets['u'], st.secrets['p'])
@@ -906,7 +918,8 @@ if not(st.session_state['ut']):
               st.session_state['cap4']='1'            
             if st.session_state['cap4']!=None:
               with st.form('capitolul 4'):
-               st.pdf(pdf_to_base64(load_ftp_pdf_file(pres[st.session_state['M_1_6']])))
+               pdf_data = load_ftp_pdf_file(pres[st.session_state['M_1_6']]))
+               show_pdf_dialog(pdf_data)             
                st.text_area('4.1 Preconditii din curriculum',value=data_fis['M_4_1'],key='M_4_1',placeholder="Completati manual. Aplicatia nu a reusit sa identifice text in fisa incarcata!")
                st.text_area('4.2 Preconditii de competente',value=data_fis['M_4_2'],key='M_4_2',placeholder="Completati manual. Aplicatia nu a reusit sa identifice text in fisa incarcata!")
                st.text_area('5.1 Conditii de desfasurare a cursului',value=data_fis['M_5_1'],key='M_5_1',placeholder="Completati manual. Aplicatia nu a reusit sa identifice text in fisa incarcata!")        
