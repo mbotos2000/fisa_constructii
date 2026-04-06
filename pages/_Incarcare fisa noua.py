@@ -15,8 +15,9 @@ import pickle
 import string
 from auth_simple import require_login
 name, user = require_login("🔐 App Login")
-st.title("Dashboard")
-st.success(f"Welcome, {name}!")
+st.title("Fisa disciplinei")
+st.success(f"Bine ai venit, {name}!")
+@st.dialog("info")
 #from docx import Document
 
 def preprocess(text):
