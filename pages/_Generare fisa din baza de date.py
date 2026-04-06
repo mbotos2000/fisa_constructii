@@ -16,25 +16,6 @@ import string
 from auth_simple import require_login
 #from docx import Document
 
-def pdf_to_base64(pdf_file):
-    """Convert a PDF file to a base64 string."""
-    return base64.b64encode(pdf_file.read()).decode("utf-8")
-
-
-def show_pdf_dialog(pdf_bytes):
-    """Display PDF bytes in a Streamlit dialog window."""
-    b64_pdf = base64.b64encode(pdf_bytes).decode("utf-8")
-
-    with st.dialog("PDF Preview"):
-        st.markdown(
-            f"""
-            <iframe src="data:application/pdf;base64,{b64_pdf}"
-                    width="100%" height="600px"></iframe>
-            """,
-            unsafe_allow_html=True,
-        )
-        st.button("Close")
-
 
 def preprocess(text):
     return text.strip().lower().translate(str.maketrans('', '', string.punctuation))
@@ -636,6 +617,21 @@ def load_ftp_pdf_file(presc):
 
     # Return downloaded files
     return file_data.read()
+
+def show_pdf_dialog(pdf_bytes):
+    """Display PDF bytes in a Streamlit dialog window."""
+    b64_pdf = base64.b64encode(pdf_bytes).decode("utf-8")
+
+    with st.dialog("PDF Preview"):
+        st.markdown(
+            f"""
+            <iframe src="data:application/pdf;base64,{b64_pdf}"
+                    width="100%" height="600px">
+            </iframe>
+            """,
+            unsafe_allow_html=True,
+        )
+        st.button("Close")
 def load_pkl_from_ftp(file_path):
    
         #ftp = ftplib.FTP("users.utcluj.ro", st.secrets['u'], st.secrets['p'])
