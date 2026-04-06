@@ -619,51 +619,30 @@ def load_ftp_pdf_file(presc):
     return file_data.read()
 
 def show_pdf_modal(pdf_bytes):
-   
-
-    
+    b64_pdf = base64.b64encode(pdf_bytes).decode("utf-8")
 
     modal_html = f"""
-    <div id="pdf_modal" style="
+    <div style="
         position: fixed;
         top: 0; left: 0;
         width: 100%; height: 100%;
-        background-color: rgba(0,0,0,0.6);
-        z-index: 99999;
+        background-color: rgba(0,0,0,0.5);
+        z-index: 9999;
         display: flex;
         justify-content: center;
         align-items: center;
     ">
         <div style="
-            width: 80%; 
-            height: 80%;
+            width: 80%; height: 80%;
             background: white;
-            padding: 15px;
+            padding: 20px;
             border-radius: 10px;
-            position: relative;
-            overflow: hidden;
         ">
-
-            <button onclick="document.getElementById('pdf_modal').remove()" 
-                style="
-                    position: absolute;
-                    top: 10px; right: 10px;
-                    padding: 6px 12px;
-                    background-color: #c62828;
-                    color: white;
-                    border: none;
-                    border-radius: 5px;
-                    cursor: pointer;
-                    z-index: 100000;
-                ">
-                Close
+            data:application/pdf;base64,{b64_pdf}
+            <br><br>
+            <button onclick="document.body.removeChild(this.parentNode.parentNode)">
+                Închide
             </button>
-
-            <iframe 
-                src="data:application/pdf;base64,{b64_pdf}"
-                style="width:100%; height:100%; border:none;"
-            ></iframe>
-
         </div>
     </div>
     """
