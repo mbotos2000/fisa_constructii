@@ -16,11 +16,12 @@ import string
 from auth_simple import require_login
 import hashlib
 import time
-@st.dialog("info")
+
 
 name, user = require_login("🔐 App Login")
 st.title("Dashboard")
 st.success(f"Welcome, {name}!")
+@st.dialog("info")
 def info():
  st.write("Aplicația este pusă la dispoziția dumneavoastră pentru a elimina confuziile și neconcordanțele generate de modificările și noile reglementări ARACIS. Formularul _Fișei disciplinei_ a suferit schimbări de structură, iar această aplicație automatizează procesul de actualizare. Toate informațiile introduse de dumneavoastră sunt transpuse automat în noul șablon oficial.")
  st.write("Datele referitoare la disciplină (denumire, număr de credite, tip de examinare, număr de ore, codul disciplinei etc.) sunt preluate direct din planurile de învățământ. Au fost introduse două capitole noi: Competențe și Rezultatele învățării. Pentru fiecare specializare, formulările oficiale se regăsesc în prezentarea planului de învățământ și sunt afișate de aplicație în etapa de completare. Acestea trebuie adaptate pentru fiecare disciplină în secțiunile corespunzătoare ale fișei.")
