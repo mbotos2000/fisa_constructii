@@ -619,9 +619,9 @@ def load_ftp_pdf_file(presc):
     return file_data.read()
 
 def show_pdf_modal(pdf_bytes):
-    import base64
+   
 
-    b64_pdf = base64.b64encode(pdf_bytes).decode("utf-8")
+    
 
     modal_html = f"""
     <div id="pdf_modal" style="
