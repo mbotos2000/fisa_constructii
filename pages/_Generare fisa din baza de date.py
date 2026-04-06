@@ -944,7 +944,7 @@ if not(st.session_state['ut']):
                st.text_area('4.2 Preconditii de competente',value=data_fis['M_4_2'],key='M_4_2',placeholder="Completati manual. Aplicatia nu a reusit sa identifice text in fisa incarcata!")
                st.text_area('5.1 Conditii de desfasurare a cursului',value=data_fis['M_5_1'],key='M_5_1',placeholder="Completati manual. Aplicatia nu a reusit sa identifice text in fisa incarcata!")        
                st.text_area('5.2 Conditii de desfasurare a aplicatiilor',value=data_fis['M_5_2'],key='M_5_2',placeholder="Completati manual. Aplicatia nu a reusit sa identifice text in fisa incarcata!")
-               if st.button("Am nevoie de informatii pentru a completa urmatoarea sectiune a fisei"):
+               with st.expander("Arată prezentarea planului de invatamant pentru mai multe informatii"):
                   pdf_stream=(load_ftp_pdf_file(pres[st.session_state['M_1_6']]))
                   st.pdf(pdf_stream)
                add_selectbox_cp = st.multiselect('6.a Competente profesionale acumulate',c_spec,help='Pot fi alese oricate competente.')
