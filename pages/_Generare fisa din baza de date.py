@@ -619,6 +619,8 @@ def load_ftp_pdf_file(presc):
     return file_data.read()
 
 def show_pdf_modal(pdf_bytes):
+    import base64
+
     b64_pdf = base64.b64encode(pdf_bytes).decode("utf-8")
 
     modal_html = f"""
@@ -633,7 +635,8 @@ def show_pdf_modal(pdf_bytes):
         align-items: center;
     ">
         <div style="
-            width: 80%; height: 80%;
+            width: 80%; 
+            height: 80%;
             background: white;
             padding: 15px;
             border-radius: 10px;
@@ -642,17 +645,17 @@ def show_pdf_modal(pdf_bytes):
         ">
 
             <button onclick="document.getElementById('pdf_modal').remove()" 
-                    style="
-                        position: absolute;
-                        top: 10px; right: 10px;
-                        padding: 6px 12px;
-                        background-color: #c62828;
-                        color: white;
-                        border: none;
-                        border-radius: 5px;
-                        cursor: pointer;
-                        z-index: 100000;
-                    ">
+                style="
+                    position: absolute;
+                    top: 10px; right: 10px;
+                    padding: 6px 12px;
+                    background-color: #c62828;
+                    color: white;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    z-index: 100000;
+                ">
                 Close
             </button>
 
