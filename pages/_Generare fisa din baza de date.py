@@ -420,6 +420,14 @@ if 'ut' not in st.session_state:
 name, user = require_login("🔐 App Login")
 st.title("Dashboard")
 st.success(f"Welcome, {name}!")
+@st.dialog("info")
+def info():
+ st.write("Aplicația este pusă la dispoziția dumneavoastră pentru a elimina confuziile și neconcordanțele generate de modificările și noile reglementări ARACIS. Formularul _Fișei disciplinei_ a suferit schimbări de structură, iar această aplicație automatizează procesul de actualizare. Toate informațiile introduse de dumneavoastră sunt transpuse automat în noul șablon oficial.")
+ st.write("Datele referitoare la disciplină (denumire, număr de credite, tip de examinare, număr de ore, codul disciplinei etc.) sunt preluate direct din planurile de învățământ. Au fost introduse două capitole noi: Competențe și Rezultatele învățării. Pentru fiecare specializare, formulările oficiale se regăsesc în prezentarea planului de învățământ și sunt afișate de aplicație în etapa de completare. Acestea trebuie adaptate pentru fiecare disciplină în secțiunile corespunzătoare ale fișei.")
+ st.write("Pentru fișele încărcate în anii anteriori în baza de date, aceste capitole conțin propuneri destinate titularului de curs. Disciplinele aflate la prima completare pot fi încărcate în format .docx, iar aplicația va prelua automat cât mai multe dintre informațiile existente. De asemenea, este posibilă completarea manuală prin câmpurile afișate. Propunerile generate pot fi acceptate, preluate sau editate.")
+ st.write("Datele privind aprobarea în departament și consiliu vor fi actualizate automat atunci când devin disponibile. La final, fișa completată poate fi descărcată și vizualizată în formatul oficial aprobat.")
+
+info()
 keys_none=['cap2','cap3','cap4','resetare' ,'file','M_8_1_o1','M_8_1_mp1','M_8_1_o','M_8_1_mp']
 for key in keys_none:
     st.session_state.setdefault(key, None)
