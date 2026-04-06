@@ -418,8 +418,8 @@ if 'test_aplicatie' not in st.session_state:
 if 'ut' not in st.session_state:
     st.session_state['ut']=False
 name, user = require_login("🔐 App Login")
-st.title("Dashboard")
-st.success(f"Welcome, {name}!")
+st.title("Fisa disciplinei")
+st.success(f"Bine ai venit, {name}!")
 @st.dialog("info")
 def info():
  st.write("Aplicația este pusă la dispoziția dumneavoastră pentru a elimina confuziile și neconcordanțele generate de modificările și noile reglementări ARACIS. Formularul _Fișei disciplinei_ a suferit schimbări de structură, iar această aplicație automatizează procesul de actualizare. Toate informațiile introduse de dumneavoastră sunt transpuse automat în noul șablon oficial.")
@@ -609,23 +609,22 @@ def load_ftp_file():
         docx_files["fisa_template_Mail_aplicatie_eng.docx"],
         csv_data["lista_cd.csv"],pkl_files
     )
+
+
 def load_ftp_pdf_file(presc):
     # Establish FTP connection
-
-    #ftp_server = ftplib.FTP("users.utcluj.ro", st.secrets['u'], st.secrets['p'])
     ftp_server = ftplib.FTP_TLS("users.utcluj.ro")
     ftp_server.login(user=st.secrets['u'], passwd=st.secrets['p'])
     ftp_server.prot_p()
     
-    ftp_server.encoding = "utf-8"  # Force UTF-8 encoding
+    ftp_server.encoding = "utf-8"
     ftp_server.cwd('./public_html')
+
     file_data = BytesIO()
     ftp_server.retrbinary(f"RETR prezentare_{presc}.pdf", file_data.write)
-    file_data.seek(0)  # Reset file pointer to the start
+    file_data.seek(0)  # Reset pointer so Streamlit reads correctly
     
-
-    # Return downloaded files
-    return file_data.read()
+    return file_data  # return stream, NOT file_data.read()
 
 def show_pdf_modal(pdf_bytes):
     b64_pdf = base64.b64encode(pdf_bytes).decode("utf-8")
@@ -939,8 +938,9 @@ if not(st.session_state['ut']):
               st.session_state['cap4']='1'            
             if st.session_state['cap4']!=None:
               with st.form('capitolul 4'):
-               pdf_data = load_ftp_pdf_file(pres[st.session_state['M_1_6']])
-               show_pdf_modal(pdf_data)             
+				  
+               pdf_stream = load_ftp_pdf_file(pres[st.session_state['M_1_6']])
+               st.pdf(pdf_stream)            
                st.text_area('4.1 Preconditii din curriculum',value=data_fis['M_4_1'],key='M_4_1',placeholder="Completati manual. Aplicatia nu a reusit sa identifice text in fisa incarcata!")
                st.text_area('4.2 Preconditii de competente',value=data_fis['M_4_2'],key='M_4_2',placeholder="Completati manual. Aplicatia nu a reusit sa identifice text in fisa incarcata!")
                st.text_area('5.1 Conditii de desfasurare a cursului',value=data_fis['M_5_1'],key='M_5_1',placeholder="Completati manual. Aplicatia nu a reusit sa identifice text in fisa incarcata!")        
