@@ -918,7 +918,7 @@ if not(st.session_state['ut']):
               st.session_state['cap4']='1'            
             if st.session_state['cap4']!=None:
               with st.form('capitolul 4'):
-               pdf_data = load_ftp_pdf_file(pres[st.session_state['M_1_6']]))
+               pdf_data = load_ftp_pdf_file(pres[st.session_state['M_1_6']])
                show_pdf_dialog(pdf_data)             
                st.text_area('4.1 Preconditii din curriculum',value=data_fis['M_4_1'],key='M_4_1',placeholder="Completati manual. Aplicatia nu a reusit sa identifice text in fisa incarcata!")
                st.text_area('4.2 Preconditii de competente',value=data_fis['M_4_2'],key='M_4_2',placeholder="Completati manual. Aplicatia nu a reusit sa identifice text in fisa incarcata!")
