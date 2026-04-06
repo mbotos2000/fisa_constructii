@@ -607,7 +607,7 @@ def load_ftp_file():
     # Return downloaded files
     return (
         csv_data["lista_cd.csv"], 
-        csv_data["planinv_2025.csv"], 
+        csv_data["planinv_2025_v2.csv"], 
         docx_files["fisa_template_Mail_R.docx"], 
         docx_files["fisa_template_Mail_eng.docx"], 
         docx_files["fisa_template_Mail_curs_R.docx"], 
