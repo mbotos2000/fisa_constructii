@@ -19,8 +19,8 @@ import time
 
 
 name, user = require_login("🔐 App Login")
-st.title("Dashboard")
-st.success(f"Welcome, {name}!")
+st.title("Fisa disciplinei")
+st.success(f"Bine ai venit, {name}!")
 @st.dialog("info")
 def info():
  st.write("Aplicația este pusă la dispoziția dumneavoastră pentru a elimina confuziile și neconcordanțele generate de modificările și noile reglementări ARACIS. Formularul _Fișei disciplinei_ a suferit schimbări de structură, iar această aplicație automatizează procesul de actualizare. Toate informațiile introduse de dumneavoastră sunt transpuse automat în noul șablon oficial.")
