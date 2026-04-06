@@ -591,7 +591,7 @@ def load_ftp_file():
     # Get list of .pkl files
     files = ftp_server.nlst()
     pkl_files = [f for f in files if f.endswith('.pkl')]
-	pkl_1=pkl_files
+    pkl_1=pkl_files
     ftp_server.cwd('..')
     ftp_server.cwd('./2024')
 
