@@ -586,15 +586,22 @@ def load_ftp_file():
 
     # Close FTP connection
     ftp_server.cwd('..')
-    ftp_server.cwd('./public_html/Fise/2024')
+    ftp_server.cwd('./public_html/Fise/2025_r')
 
     # Get list of .pkl files
     files = ftp_server.nlst()
     pkl_files = [f for f in files if f.endswith('.pkl')]
+	pkl_1=pkl_files
+    ftp_server.cwd('..')
+    ftp_server.cwd('./2024')
+
+    # Get list of .pkl files
+    files = ftp_server.nlst()
+    pkl_files = pkl_files + [f for f in files if f.endswith('.pkl') and f not in pkl_1]
     ftp_server.cwd('..')
     ftp_server.cwd('./2025')
     files = ftp_server.nlst()
-    pkl_files = pkl_files+[f for f in files if f.endswith('.pkl')]
+    pkl_files = pkl_files + [f for f in files if f.endswith('.pkl') and f not in pkl_1]
     ftp_server.quit()
 
     # Return downloaded files
@@ -653,7 +660,7 @@ data1['specializare'] = data1['specializare'].apply(strip_last)
 lista_ci=['Licenta', 'Master']
 lista_ci=my_function(lista_ci)
 st.header("Aplicatie generare fisa disciplinei folosind variante anterioare salvate in baza de date a Facultatii de constructii", divider="gray")
-if st.button("Apasa aici daca nu este afisata nici o optiune de continuare"):
+if st.button("Apasa aici doar daca nu este afisata nici o optiune de continuare"):
 	st.session_state['ut']=False
 if not(st.session_state['ut']):
     add_selectbox_C = st.selectbox(
