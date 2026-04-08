@@ -1065,8 +1065,8 @@ if not(st.session_state['ut']):
                 for key in keys_to_merge:
                   if key in st.session_state:
                     document.merge(**{key: st.session_state[key]})
-                file_name=st.session_state['M_1_8']+'_FD_an'+st.session_state['M_2_4']+'_s'+st.session_state['M_2_5']+'_'+pres[st.session_state['M_1_6']]+'_'+st.session_state['M_2_1']+'_24-25.docx'
-                remote_filename=st.session_state['M_1_8']+'_FD_an'+st.session_state['M_2_4']+'_s'+st.session_state['M_2_5']+'_'+pres[st.session_state['M_1_6']]+'_'+st.session_state['M_2_1']+'_24-25.pkl'
+                file_name=st.session_state['M_1_8']+'_FD_an'+st.session_state['M_2_4']+'_s'+st.session_state['M_2_5']+'_'+pres[st.session_state['M_1_6']]+'_'+st.session_state['M_2_1']+'_26-27.docx'
+                remote_filename=st.session_state['M_1_8']+'_FD_an'+st.session_state['M_2_4']+'_s'+st.session_state['M_2_5']+'_'+pres[st.session_state['M_1_6']]+'_'+st.session_state['M_2_1']+'_26-27.pkl'
                 remote_filename_csv=st.session_state['M_1_8']+'_FD_an'+st.session_state['M_2_4']+'_s'+st.session_state['M_2_5']+'_'+pres[st.session_state['M_1_6']]+'_'+st.session_state['M_2_1']+'_24-25.csv'
                 current_datetime = datetime.now()    
                 document.write(file_name)
@@ -1105,7 +1105,7 @@ if not(st.session_state['ut']):
                 ftp_server1.login(user=st.secrets['u'], passwd=st.secrets['p'])
                 ftp_server1.prot_p()
                 ftp_server1.encoding = "utf-8"
-                ftp_server1.cwd('./public_html/Fise/2025_r')
+                ftp_server1.cwd('./public_html/Fise/2026')
                 ftp_server1.storbinary(f'STOR {remote_filename}', pickle_buffer)  # Send the file
                 #ftp_server1.storbinary(f'STOR {remote_filename_csv}', csv_buffer)
                 ftp_server1.quit()
@@ -1116,7 +1116,7 @@ if not(st.session_state['ut']):
                 ftp_server1.login(user=st.secrets['u'], passwd=st.secrets['p'])
                 ftp_server1.prot_p()
                 ftp_server1.encoding = "utf-8"
-                ftp_server1.cwd('./public_html/Fise/2025_r')
+                ftp_server1.cwd('./public_html/Fise/2026')
                 ftp_server1.storbinary(f'STOR {file_name}', docx_buff)
                 ftp_server1.quit()
 
