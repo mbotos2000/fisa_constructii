@@ -1332,76 +1332,51 @@ if st.session_state['file']!=None or st.session_state['ut']:
         #st.dataframe(new_row_df)
         dict_from_df = new_row_df.to_dict(orient='list')
         #df = pd.concat([data2, new_row_df], ignore_index=True)
-        csv_buffer = BytesIO()
-        data_ftp.to_csv(csv_buffer, index=False)
-        csv_buffer.seek(0)  # Reset buffer pointer to the beginning
-        pickle_buffer = BytesIO()
-        pickle_buffer_bak = BytesIO()
-        #!!!!!!!!!!!!
-        pickle.dump({key: str(st.session_state.get(key, '')) for key in st.session_state.keys()}, pickle_buffer)
-        pickle_buffer.seek(0) 
-        pickle.dump({key: str(st.session_state.get(key, '')) for key in st.session_state.keys()}, pickle_buffer_bak)
-        pickle_buffer_bak.seek(0) 
+      
+		session_data = {
+		    key: str(st.session_state.get(key, ''))
+		    for key in st.session_state
+		}
+		
+		# -------------------------
+		# Pickle once, reuse buffer
+		# -------------------------
+		pickle_buffer = BytesIO()
+		pickle.dump(session_data, pickle_buffer)
+		pickle_buffer.seek(0)
+		
+		# Backup buffer (reuse same data)
+		pickle_buffer_bak = BytesIO(pickle_buffer.getvalue())
+		
+		# -------------------------
+		# Create DOCX buffer
+		# -------------------------
+		docx_buff = BytesIO()
+		document.write(docx_buff)
+		docx_buff.seek(0)
+		
+		# -------------------------
+		# Single FTP connection
+		# -------------------------
+		with ftplib.FTP_TLS("users.utcluj.ro") as ftp:
+		    ftp.login(user=st.secrets['u'], passwd=st.secrets['p'])
+		    ftp.prot_p()
+		    ftp.encoding = "utf-8"
+		
+		    # Upload pickle (main)
+		    ftp.cwd("/public_html/Fise/2026")
+		    ftp.storbinary(f"STOR {remote_filename}", pickle_buffer)
+		
+		    # Upload pickle backup
+		    ftp.cwd("/public_html/Fise/2026_bak")
+		    ftp.storbinary(f"STOR {filename_bak}", pickle_buffer_bak)
+		
+		    # Upload DOCX
+		    ftp.cwd("/public_html/Fise/2026")
+		    ftp.storbinary(f"STOR {file_name}", docx_buff)
 
-        ftp_server1 = ftplib.FTP_TLS("users.utcluj.ro")
-        ftp_server1.login(user=st.secrets['u'], passwd=st.secrets['p'])
-        ftp_server1.prot_p()
-        ftp_server1.encoding = "utf-8"
-        ftp_server1.cwd('./public_html/Fise/2026')
-        ftp_server1.storbinary(f'STOR {remote_filename}', pickle_buffer)  
-		  # Send the file
-	#ftp_server1.storbinary(f'STOR {file_name}', docx_buffer)
-        ftp_server1.cwd('..')
-        ftp_server1.cwd('./public_html/Fise/2026_bak')
-        ftp_server1.storbinary(f'STOR {filename_bak}', pickle_buffer_bak)     
-        ftp_server1.quit()
-        docx_buff=BytesIO()
-        document.write(docx_buff)
-        docx_buff.seek(0)
-        ftp_server1 = ftplib.FTP_TLS("users.utcluj.ro")
-        ftp_server1.login(user=st.secrets['u'], passwd=st.secrets['p'])
-        ftp_server1.prot_p()
-        ftp_server1.encoding = "utf-8"
-        ftp_server1.cwd('./public_html/Fise/2026')
-        ftp_server1.storbinary(f'STOR {file_name}', docx_buff)
-        ftp_server1.quit()
-
-        #sub1=st.form_submit_button("Incarca alt fisier docx")
-        #if sub1:
-        # st.write("Acceseaza linkul de mai jos pentru a incarca o alta fisa in format docx")
-        # redirect_url1 = "https://fisaconstructiiutcn.streamlit.app/"
-        # st.markdown(f"[Incaraca alt fisier docx]({redirect_url1})")
-       #  st.stop()  # Only if needed, or use JS for redirect
-       # sub2=st.form_submit_button("Cauta fisa noua in baza de date")
-       # if sub2:
+		  
         st.write("Acceseaza linkul de mai jos pentru a cauta din nou in baza de date o fisa")
         redirect_url2 = "https://fisaconstructii-utcn.streamlit.app/"
         st.markdown(f"[Cauta in baza de date]({redirect_url2})")
-        st.stop()  # Only if needed, or use JS for redirect# Convert the updated DataFrame to CSV format
-        #data_baza = df.to_csv(index=False)
-        #def clear_cache():
-        #  st.cache_data.clear()  # Clear @st.cache_data cache
-        #  st.cache_resource.clear()  # Clear @st.cache_resource cache
-        #def clear_resource(file):
-         
-        #  file_buffer = BytesIO()
-         # file.to_csv(file_buffer, index=False)  # Save DataFrame as CSV to BytesIO
-          
-        #  file_buffer.seek(0)  # Reset the buffer's position to the start
-        #  ftp_server = ftplib.FTP("users.utcluj.ro", st.secrets['u'], st.secrets['p'])
-         # ftp_server.encoding = "utf-8"
-         # ftp_server.cwd('./public_html')
-          #ftp_server.delete('baza.csv')
-         # ftp_server.storbinary('STOR baza.csv', file_buffer)  # Send the file
-         # ftp_server.quit()
-          #st.cache_data.clear()
-          #st.cache_resource.clear()
-        # Button to clear cache
-        #clear_cache_button = st.form_submit_button("Incarca alta fisa")
-        #clear_resource_button = st.form_submit_button("Scrie datele in baza")
-        #if clear_cache_button:
-        #    clear_cache()
-        #   st.success("Cache cleared!")
-        #if clear_resource_button:
-         #  clear_resource(df)
-         #  st.success("Datele au fost scrise!")
+        st.stop()  
