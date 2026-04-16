@@ -14,7 +14,7 @@ from difflib import get_close_matches
 import pickle
 import string
 from auth_simple import require_login
-name, user = require_login("🔐 App Login")
+name, user = require_login("🔐 Incarcare credentiale")
 st.title("Fisa disciplinei")
 st.success(f"Bine ai venit, {name}!")
 @st.dialog("info")
