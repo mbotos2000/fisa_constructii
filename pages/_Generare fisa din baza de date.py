@@ -1063,7 +1063,7 @@ if not(st.session_state['ut']):
                                'M_8_1_1','M_8_1_2','M_8_1_3','M_8_1_4','M_8_1_5','M_8_1_6','M_8_1_7','M_8_1_8','M_8_1_9','M_8_1_11','M_8_1_12','M_8_1_13','M_8_1_14','Biblio_c',
                                'M_8_2_1','M_8_2_2','M_8_2_3','M_8_2_4','M_8_2_5','M_8_2_6','M_8_2_7','M_8_2_8','M_8_2_9','M_8_2_10','M_8_2_12','M_8_2_13','M_8_2_14','Biblio_a','M_9',
                                'M_10_1_a','M_10_1_c','M_10_2_c','M_10_3_a','M_10_3_c','M_10_6','M_10_2_a','M_8_1_10',
-                               'M_8_1_o1','M_8_1_mp','M_8_1_mp1','M_8_1_o','dep','da_cu','data_fac','data_dep','tip','dir_dep','decan','fac']
+                               'M_8_1_o1','M_8_1_mp','M_8_1_mp1','M_8_1_o','dep','da_cu','data_fac','data_dep','tip','dir_dep','decan','fac','NAME']
                 data_ftp=pd.DataFrame(columns=keys_to_merge)
                 
                 for key in keys_to_merge:
