@@ -66,7 +66,8 @@ def strip_last(x):
 
 def my_function(x):
   return list(dict.fromkeys(x))
-
+def schimba_NAME(new):
+    st.session_state['NAME'] = str(new)
 def schimba_1_1(new):
     st.session_state['M_1_1'] = str(new)
 
@@ -389,7 +390,8 @@ for key in keys_dash:
     st.session_state.setdefault(key, '-')
 if 'M_3_7_a' not in st.session_state:
     st.session_state['M_3_7_a']=0.0
-
+if 'NAME' not in st.session_state:
+    st.session_state['NAME']="noname"
 if 'M_3_7_b' not in st.session_state:
     st.session_state['M_3_7_b']=0.0
  
@@ -1296,7 +1298,7 @@ if st.session_state['file']!=None or st.session_state['ut']:
 		       'M_9',
 		       'M_10_1_a','M_10_1_c','M_10_2_c','M_10_3_a','M_10_3_c','M_10_6','M_10_2_a','M_8_1_10',
 		       'M_8_1_o1','M_8_1_mp','M_8_1_mp1','M_8_1_o',
-		       'dep','da_cu','data_fac','data_dep','tip','dir_dep','decan','fac']
+		       'dep','da_cu','data_fac','data_dep','tip','dir_dep','decan','fac','NAME']
         data_ftp=pd.DataFrame(columns=keys_to_merge)
 	
         for key in keys_to_merge:
