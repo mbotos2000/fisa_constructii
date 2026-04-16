@@ -786,7 +786,7 @@ if st.session_state['file']!=None or st.session_state['ut']:
     try:
        tosi=data1['orestud'].loc[(data1['specializare']==st.session_state['M_1_6'])&(data1['nume_disciplina']==st.session_state['M_2_1']) ].values[0]
     except:
-		pass
+       pass
     #st.write('Total ore studiu individual ', tosi)
 
     slide_37a=0
