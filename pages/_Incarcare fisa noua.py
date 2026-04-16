@@ -623,25 +623,12 @@ if st.session_state['file']!=None or st.session_state['ut']:
      add_selectbox_DP = st.selectbox('Departamentul?',lista_d,index=find_closest_match_index(doc_result.body[1][2][1][0], lista_d))
     except:
      add_selectbox_DP = st.selectbox('Departamentul?',lista_d)
-	    
-    #add_selectbox_dom = st.selectbox(
-    #        'Domeniul de studii?',
-    #        ('Inginerie civila', 'Inginerie si management', 'Inginerie geodezica'),key='M_1_4'
-    #    )
-    #lista_ci=doc_result.body[1][4][1]+['Licenta', 'Master']
 
     submitted = st.form_submit_button("Treceti la alegerea specializarii")
     if submitted:
       st.session_state['M_1_3']=add_selectbox_DP
       #st.write()
       schimba_1_1("Universitatea Tehnica din Cluj Napoca")
-      ##st.write(departamentele[add_selectbox_SP])
-      #schimba_1_2(add_selectbox)
-      #schimba_1_3(add_selectbox_DP)
-      #schimba_1_4(add_selectbox_dom)
-      #schimba_1_5(add_selectbox_SP)
-      #schimba_1_6(add_selectbox_C)
-      #schimba_dep(add_selectbox_DP)
       schimba_1_7('IF – învăţământ cu frecvenţă')
       st.session_state['cap2']='1'
      
@@ -711,33 +698,18 @@ if st.session_state['file']!=None or st.session_state['ut']:
                 st.session_state['M_2_3']=s
                 st.session_state['M_2_3_1']=ss
                 st.session_state['M_1_8']=str(data1['nrcrt'].loc[(data1['specializare']==st.session_state['M_1_6']) & (data1['nume_disciplina']==st.session_state['M_2_1'])].values[0])
-
-                #st.write('Numele disciplinei este:',st.session_state['M_2_1'])
-                #st.write(st.session_state['M_2_2'])
-                #st.write('Codul disciplinei este:',st.session_state['M_1_8'])
-
-                #schimba_2_3(add_selectbox_TA)
-                #st.write(st.session_state['M_2_3_1'])
-                
-		
-                #st.session_state['M_2_4']=str(data1['an'].loc[(data1['specializare']==st.session_state['M_1_6']) & (data1['nume_disciplina']==st.session_state['M_2_1'])].values[0])
-                #st.write("Anul in care e studiata disciplina aleasa: ",st.session_state['M_2_4'])
                 st.session_state['M_2_5']=str(data1['semestru'].loc[(data1['specializare']==st.session_state['M_1_6']) & (data1['nume_disciplina']==st.session_state['M_2_1'])].values[0])
                 indices = data1.loc[(data1['specializare'] == st.session_state['M_1_6']) & (data1['nume_disciplina'] == st.session_state['M_2_1']),'semestru'].index
                 
                 st.session_state['M_2_4']=str(data1.iloc[indices.tolist()[0], 0])
-		
-		#st.write("Semestrul in care e studiata disciplina aleasa: ",st.session_state['M_2_5'])
+
                 st.session_state['M_2_6']=ver[str(data1['examin'].loc[(data1['specializare']==st.session_state['M_1_6']) & (data1['nume_disciplina']==st.session_state['M_2_1'])].values[0]).strip()]
                 #st.write("Tipul de examinare pentru disciplina aleasa: ",st.session_state['M_2_6'])
 
                 st.session_state['M_2_7_1']=str(data1['numecat'].loc[(data1['specializare']==st.session_state['M_1_6']) & (data1['nume_disciplina']==st.session_state['M_2_1'])].values[0])
                 #st.write(st.session_state['M_2_7_1'])
                 st.session_state['M_2_7_2']=str(data1['obligativ'].loc[(data1['specializare']==st.session_state['M_1_6']) & (data1['nume_disciplina']==st.session_state['M_2_1'])].values[0])
-                #st.write(st.session_state['M_2_7_2'])
-                #data1['curs'].loc[(data1['nume_disciplina']==add_selectbox_D)&(data1['curs']!='curs'),0]
-                #st.write(add_selectbox_D)
-                #st.write('Lungimea string-ului este:',len(str(data1['curs'].loc[(data1['specializare']==st.session_state['M_1_6'])&(data1['nume_disciplina']==st.session_state['M_2_1'])&(data1['curs']!='CURS      ')].values[0])))
+
                 try:
                     st.session_state['tip']=str(data1['curs'].loc[(data1['specializare']==st.session_state['M_1_6'])&(data1['nume_disciplina']==st.session_state['M_2_1'])&(data1['curs']!='CURS      ')].values[0]).lower()
                 except:
@@ -757,8 +729,6 @@ if st.session_state['file']!=None or st.session_state['ut']:
 
                     except:
                         try:
-                            #schimba_M_3_1(data1['numarore'].loc[(data1['specializare']==st.session_state['M_1_6'])&(data1['nume_disciplina']==st.session_state['M_2_1'])&(data1['curs']=='CURS      ')].values[0])
-                            #schimba_M_3_4(14*(data1['numarore'].loc[(data1['specializare']==st.session_state['M_1_6'])&(data1['nume_disciplina']==st.session_state['M_2_1'])&(data1['curs']=='CURS      ')].values[0]))
                             st.session_state['M_3_1']=str(int(data1['numarore'].loc[(data1['specializare']==st.session_state['M_1_6'])&(data1['nume_disciplina']==st.session_state['M_2_1'])&(data1['curs']=='CURS      ')].values[0]))
                             st.session_state['M_3_4']=str(int(14*(data1['numarore'].loc[(data1['specializare']==st.session_state['M_1_6'])&(data1['nume_disciplina']==st.session_state['M_2_1'])&(data1['curs']=='CURS      ')].values[0])))
 
@@ -773,12 +743,8 @@ if st.session_state['file']!=None or st.session_state['ut']:
                     pass
                 try:
                     if data1['curs'].loc[(data1['specializare']==st.session_state['M_1_6'])&(data1['nume_disciplina']==st.session_state['M_2_1'])&(data1['curs']!='CURS      ')].values[0]=='SEMINAR   ':
-                        #schimba_3_3_s(data1['numarore'].loc[(data1['specializare']==st.session_state['M_1_6'])&(data1['nume_disciplina']==st.session_state['M_2_1'])&(data1['curs']!='CURS      ')].values[0])
-                        #schimba_3_6_s(14*data1['numarore'].loc[(data1['specializare']==st.session_state['M_1_6'])&(data1['nume_disciplina']==st.session_state['M_2_1'])&(data1['curs']!='CURS      ')].values[0])
                         st.session_state['M_3_3_s']=str(int(data1['numarore'].loc[(data1['specializare']==st.session_state['M_1_6'])&(data1['nume_disciplina']==st.session_state['M_2_1'])&(data1['curs']!='CURS      ')].values[0]))
                         st.session_state['M_3_6_s']=str(int(14*data1['numarore'].loc[(data1['specializare']==st.session_state['M_1_6'])&(data1['nume_disciplina']==st.session_state['M_2_1'])&(data1['curs']!='CURS      ')].values[0]))
-
-                        # st.write('Am gasit seminar')
                         st.session_state['test_aplicatie']=True
                 except:
                     pass
@@ -817,8 +783,10 @@ if st.session_state['file']!=None or st.session_state['ut']:
   if st.session_state['cap3']!=None:
     st.write('Distribuția fondului de timp (ore pe semestru)')
     #st.session_state['M_3_8']=str(data1['orestud'].loc[(data1['specializare']==st.session_state['M_1_6'])&(data1['nume_disciplina']==st.session_state['M_2_1']) & (data1['curs']=='CURS      ')].values[0])
-    tosi=data1['orestud'].loc[(data1['specializare']==st.session_state['M_1_6'])&(data1['nume_disciplina']==st.session_state['M_2_1']) ].values[0]
-
+    try:
+       tosi=data1['orestud'].loc[(data1['specializare']==st.session_state['M_1_6'])&(data1['nume_disciplina']==st.session_state['M_2_1']) ].values[0]
+    except:
+		pass
     #st.write('Total ore studiu individual ', tosi)
 
     slide_37a=0
