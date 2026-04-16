@@ -1303,6 +1303,7 @@ if st.session_state['file']!=None or st.session_state['ut']:
           if key in st.session_state:
             document.merge(**{key: st.session_state[key]})
         file_name=st.session_state['M_1_8']+'_FD_an'+st.session_state['M_2_4']+'_s'+st.session_state['M_2_5']+'_'+pres[st.session_state['M_1_6']]+'_'+st.session_state['M_2_1']+'_26-27.docx'
+        file_name_bak=st.session_state['M_1_8']+'_FD_an'+st.session_state['M_2_4']+'_s'+st.session_state['M_2_5']+'_'+pres[st.session_state['M_1_6']]+'_'+st.session_state['M_2_1']+'_26-27_'+str(int(time.time()))+'.pkl'		  
         remote_filename=st.session_state['M_1_8']+'_FD_an'+st.session_state['M_2_4']+'_s'+st.session_state['M_2_5']+'_'+pres[st.session_state['M_1_6']]+'_'+st.session_state['M_2_1']+'_26-27.pkl'
         remote_filename_csv=st.session_state['M_1_8']+'_FD_an'+st.session_state['M_2_4']+'_s'+st.session_state['M_2_5']+'_'+pres[st.session_state['M_1_6']]+'_'+st.session_state['M_2_1']+'_26-27.csv'
         current_datetime = datetime.now()    
@@ -1335,19 +1336,24 @@ if st.session_state['file']!=None or st.session_state['ut']:
         data_ftp.to_csv(csv_buffer, index=False)
         csv_buffer.seek(0)  # Reset buffer pointer to the beginning
         pickle_buffer = BytesIO()
+        pickle_buffer_bak = BytesIO()
         #!!!!!!!!!!!!
         pickle.dump({key: str(st.session_state.get(key, '')) for key in st.session_state.keys()}, pickle_buffer)
         pickle_buffer.seek(0) 
-
+        pickle.dump({key: str(st.session_state.get(key, '')) for key in st.session_state.keys()}, pickle_buffer_back)
+        pickle_buffer_back.seek(0) 
 
         ftp_server1 = ftplib.FTP_TLS("users.utcluj.ro")
         ftp_server1.login(user=st.secrets['u'], passwd=st.secrets['p'])
         ftp_server1.prot_p()
         ftp_server1.encoding = "utf-8"
         ftp_server1.cwd('./public_html/Fise/2026')
-        ftp_server1.storbinary(f'STOR {remote_filename}', pickle_buffer)  # Send the file
+        ftp_server1.storbinary(f'STOR {remote_filename}', pickle_buffer)  
+		  # Send the file
 	#ftp_server1.storbinary(f'STOR {file_name}', docx_buffer)
-     
+        ftp_server1.cwd('..')
+        ftp_server1.cwd('./public_html/Fise/2026_bak')
+        ftp_server1.storbinary(f'STOR {remote_filename}', pickle_buffer_bak)     
         ftp_server1.quit()
         docx_buff=BytesIO()
         document.write(docx_buff)
