@@ -1331,12 +1331,7 @@ if st.session_state['file']!=None or st.session_state['ut']:
             data_ftp[col] = data_ftp[col].astype(str)
         #st.dataframe(new_row_df)
         dict_from_df = new_row_df.to_dict(orient='list')
-        #df = pd.concat([data2, new_row_df], ignore_index=True)
-      
-		session_data = {
-		    key: str(st.session_state.get(key, ''))
-		    for key in st.session_state
-		}
+        session_data = {key: str(st.session_state.get(key, '')) for key in st.session_state}
 		
 		# -------------------------
 		# Pickle once, reuse buffer
