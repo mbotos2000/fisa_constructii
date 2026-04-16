@@ -1097,33 +1097,21 @@ if not(st.session_state['ut']):
                     data_ftp[col] = data_ftp[col].astype(str)
                 #st.dataframe(new_row_df)
                 dict_from_df = new_row_df.to_dict(orient='list')
-		        session_data = {key: str(st.session_state.get(key, '')) for key in st.session_state}
-		        pickle_buffer = BytesIO()
-		        pickle.dump(session_data, pickle_buffer)
-		        pickle_buffer.seek(0)
-		        pickle_buffer_bak = BytesIO(pickle_buffer.getvalue())
-		        docx_buff = BytesIO()
-		        document.write(docx_buff)
-		        docx_buff.seek(0)
-		        with ftplib.FTP_TLS("users.utcluj.ro") as ftp:
-		         ftp.login(user=st.secrets['u'], passwd=st.secrets['p'])
-		         ftp.prot_p()
-		         ftp.encoding = "utf-8"
-		         ftp.cwd("/public_html/Fise/2026")
-		         ftp.storbinary(f"STOR {remote_filename}", pickle_buffer)
-		         ftp.cwd("/public_html/Fise/2026_bak")
-		         ftp.storbinary(f"STOR {file_name_bak}", pickle_buffer_bak)
-		         ftp.cwd("/public_html/Fise/2026")
-		         ftp.storbinary(f"STOR {file_name}", docx_buff)
-
-
-
-
-
-
-
-
-
-
-
-
+                session_data = {key: str(st.session_state.get(key, '')) for key in st.session_state}
+                pickle_buffer = BytesIO()
+                pickle.dump(session_data, pickle_buffer)
+                pickle_buffer.seek(0)
+                pickle_buffer_bak = BytesIO(pickle_buffer.getvalue())
+                docx_buff = BytesIO()
+                document.write(docx_buff)
+                docx_buff.seek(0)
+                with ftplib.FTP_TLS("users.utcluj.ro") as ftp:
+                 ftp.login(user=st.secrets['u'], passwd=st.secrets['p'])
+                 ftp.prot_p()
+                 ftp.encoding = "utf-8"
+	             ftp.cwd("/public_html/Fise/2026")
+                 ftp.storbinary(f"STOR {remote_filename}", pickle_buffer)
+                 ftp.cwd("/public_html/Fise/2026_bak")
+                 ftp.storbinary(f"STOR {file_name_bak}", pickle_buffer_bak)
+                 ftp.cwd("/public_html/Fise/2026")
+	             ftp.storbinary(f"STOR {file_name}", docx_buff)
