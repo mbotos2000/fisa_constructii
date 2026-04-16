@@ -1340,7 +1340,7 @@ if st.session_state['file']!=None or st.session_state['ut']:
         #!!!!!!!!!!!!
         pickle.dump({key: str(st.session_state.get(key, '')) for key in st.session_state.keys()}, pickle_buffer)
         pickle_buffer.seek(0) 
-        pickle.dump({key: str(st.session_state.get(key, '')) for key in st.session_state.keys()}, pickle_buffer_back)
+        pickle.dump({key: str(st.session_state.get(key, '')) for key in st.session_state.keys()}, pickle_buffer_bak)
         pickle_buffer_back.seek(0) 
 
         ftp_server1 = ftplib.FTP_TLS("users.utcluj.ro")
@@ -1353,7 +1353,7 @@ if st.session_state['file']!=None or st.session_state['ut']:
 	#ftp_server1.storbinary(f'STOR {file_name}', docx_buffer)
         ftp_server1.cwd('..')
         ftp_server1.cwd('./public_html/Fise/2026_bak')
-        ftp_server1.storbinary(f'STOR {remote_filename}', pickle_buffer_bak)     
+        ftp_server1.storbinary(f'STOR {filename_bak}', pickle_buffer_bak)     
         ftp_server1.quit()
         docx_buff=BytesIO()
         document.write(docx_buff)
