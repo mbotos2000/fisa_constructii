@@ -18,6 +18,7 @@ from auth_simple import require_login
 name, user = require_login("🔐 Incarcare credentiale")
 st.title("Fisa disciplinei")
 st.success(f"Bine ai venit, {name}!")
+st.session_state['NAME']=name
 @st.dialog("info")
 def info():
  st.write("Aplicația este pusă la dispoziția dumneavoastră pentru a elimina confuziile și neconcordanțele generate de modificările și noile reglementări ARACIS. Formularul _Fișei disciplinei_ a suferit schimbări de structură, iar această aplicație automatizează procesul de actualizare. Toate informațiile introduse de dumneavoastră sunt transpuse automat în noul șablon oficial.")
@@ -67,7 +68,8 @@ def strip_last(x):
 
 def my_function(x):
   return list(dict.fromkeys(x))
-
+def schimba_NAME(new):
+    st.session_state['NAME'] = str(new)
 def schimba_1_1(new):
     st.session_state['M_1_1'] = str(new)
 
@@ -398,6 +400,8 @@ if 'M_1_1' not in st.session_state:
 keys_dash=['M_3_1' ,'M_3_2' ,'M_3_3_s','M_3_3_l','M_3_3_p','M_3_4','M_3_5','M_3_6_s','M_3_6_l','M_3_6_p']
 for key in keys_dash:
     st.session_state.setdefault(key, '-')
+if 'NAME' not in st.session_state:
+    st.session_state['NAME']="noname"
 if 'M_3_7_a' not in st.session_state:
     st.session_state['M_3_7_a']=0.0
 
