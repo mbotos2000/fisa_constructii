@@ -783,10 +783,9 @@ if st.session_state['file']!=None or st.session_state['ut']:
   if st.session_state['cap3']!=None:
     st.write('Distribuția fondului de timp (ore pe semestru)')
     #st.session_state['M_3_8']=str(data1['orestud'].loc[(data1['specializare']==st.session_state['M_1_6'])&(data1['nume_disciplina']==st.session_state['M_2_1']) & (data1['curs']=='CURS      ')].values[0])
-    try:
-       tosi=data1['orestud'].loc[(data1['specializare']==st.session_state['M_1_6'])&(data1['nume_disciplina']==st.session_state['M_2_1']) ].values[0]
-    except:
-       pass
+   try:
+    tosi=data1['orestud'].loc[(data1['specializare']==st.session_state['M_1_6'])&(data1['nume_disciplina']==st.session_state['M_2_1']) ].values[0]
+
     #st.write('Total ore studiu individual ', tosi)
 
     slide_37a=0
@@ -856,6 +855,8 @@ if st.session_state['file']!=None or st.session_state['ut']:
       
       help='Completati de la a spre f. Suma orelor de studiu individual este blocata pe valoarea din planurile de invatamant')
     sd=int(tosi-int(slide_37a)-int(slide_37b)-int(slide_37c)-int(slide_37d)-int(slide_37e)-int(slide_37f))
+   except:
+       pass
     if not(sd<=0):
         slide_37f=st.slider(
           '(f) Alte activități:',
