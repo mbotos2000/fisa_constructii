@@ -1332,43 +1332,23 @@ if st.session_state['file']!=None or st.session_state['ut']:
         #st.dataframe(new_row_df)
         dict_from_df = new_row_df.to_dict(orient='list')
         session_data = {key: str(st.session_state.get(key, '')) for key in st.session_state}
-		
-		# -------------------------
-		# Pickle once, reuse buffer
-		# -------------------------
-		pickle_buffer = BytesIO()
-		pickle.dump(session_data, pickle_buffer)
-		pickle_buffer.seek(0)
-		
-		# Backup buffer (reuse same data)
-		pickle_buffer_bak = BytesIO(pickle_buffer.getvalue())
-		
-		# -------------------------
-		# Create DOCX buffer
-		# -------------------------
-		docx_buff = BytesIO()
-		document.write(docx_buff)
-		docx_buff.seek(0)
-		
-		# -------------------------
-		# Single FTP connection
-		# -------------------------
-		with ftplib.FTP_TLS("users.utcluj.ro") as ftp:
-		    ftp.login(user=st.secrets['u'], passwd=st.secrets['p'])
-		    ftp.prot_p()
-		    ftp.encoding = "utf-8"
-		
-		    # Upload pickle (main)
-		    ftp.cwd("/public_html/Fise/2026")
-		    ftp.storbinary(f"STOR {remote_filename}", pickle_buffer)
-		
-		    # Upload pickle backup
-		    ftp.cwd("/public_html/Fise/2026_bak")
-		    ftp.storbinary(f"STOR {filename_bak}", pickle_buffer_bak)
-		
-		    # Upload DOCX
-		    ftp.cwd("/public_html/Fise/2026")
-		    ftp.storbinary(f"STOR {file_name}", docx_buff)
+        pickle_buffer = BytesIO()
+        pickle.dump(session_data, pickle_buffer)
+        pickle_buffer.seek(0)
+        pickle_buffer_bak = BytesIO(pickle_buffer.getvalue())
+        docx_buff = BytesIO()
+        document.write(docx_buff)
+        docx_buff.seek(0)
+        with ftplib.FTP_TLS("users.utcluj.ro") as ftp:
+         ftp.login(user=st.secrets['u'], passwd=st.secrets['p'])
+         ftp.prot_p()
+         ftp.encoding = "utf-8"
+         ftp.cwd("/public_html/Fise/2026")
+         ftp.storbinary(f"STOR {remote_filename}", pickle_buffer)
+         ftp.cwd("/public_html/Fise/2026_bak")
+         ftp.storbinary(f"STOR {filename_bak}", pickle_buffer_bak)
+         ftp.cwd("/public_html/Fise/2026")
+         ftp.storbinary(f"STOR {file_name}", docx_buff)
 
 		  
         st.write("Acceseaza linkul de mai jos pentru a cauta din nou in baza de date o fisa")
