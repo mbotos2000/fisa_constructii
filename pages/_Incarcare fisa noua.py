@@ -855,19 +855,20 @@ if st.session_state['file']!=None or st.session_state['ut']:
       
       help='Completati de la a spre f. Suma orelor de studiu individual este blocata pe valoarea din planurile de invatamant')
     sd=int(tosi-int(slide_37a)-int(slide_37b)-int(slide_37c)-int(slide_37d)-int(slide_37e)-int(slide_37f))
-   except:
-       pass
-   if not(sd<=0):
+
+    if not(sd<=0):
         slide_37f=st.slider(
           '(f) Alte activități:',
            max_value=int(tosi-int(slide_37a)-int(slide_37b)-int(slide_37c)-int(slide_37d)-int(slide_37e)-int(slide_37f)),
       
           value=int(tosi-int(slide_37a)-int(slide_37b)-int(slide_37c)-int(slide_37d)-int(slide_37e)-int(slide_37f)),
           help='Completati de la a spre f. Suma orelor de studiu individual este cea din planurile de invatamant')
-   else:
+    else:
             st.write('(f) Alte activități: 0 ore')
             slide_37f=0
             slide_37e+=-sd
+   except:
+       pass
    a=st.button('Treci la capitolul 4')
    if a:
       st.write('Capitolul 4')
