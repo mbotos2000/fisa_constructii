@@ -895,15 +895,15 @@ if not(st.session_state['ut']):
                     slide_37d=0
                     slide_37c+=-sd
              sd=int(tosi-int(slide_37a)-int(slide_37b)-int(slide_37c)-int(slide_37d)-int(slide_37e)-int(slide_37f))
-             try:
+             if not(sd<=0):
                  slide_37e=st.slider( 'e) Examinări',
                  min_value=0, max_value=int(tosi-int(slide_37a)-int(slide_37b)-int(slide_37c)-int(slide_37d)-int(slide_37e)-int(slide_37f)),
                  value=int(data_fis['M_3_7_e']),
                  help='Completati de la a spre f. Suma orelor de studiu individual este blocata pe valoarea din planurile de invatamant')
-             except:
-                 slide_37e=st.slider( 'e) Examinări',
-                 min_value=0, max_value=int(tosi-int(slide_37a)-int(slide_37b)-int(slide_37c)-int(slide_37d)-int(slide_37e)-int(slide_37f)),
-                 help='Completati de la a spre f. Suma orelor de studiu individual este blocata pe valoarea din planurile de invatamant')
+             else:
+                    st.write('(e) Examinări: 0 ore')
+                    slide_37e=0
+                    slide_37d+=-sd
              sd=int(tosi-int(slide_37a)-int(slide_37b)-int(slide_37c)-int(slide_37d)-int(slide_37e)-int(slide_37f))
              if not(sd<=0):
                    slide_37f=st.slider('(f) Alte activități:',min_value=0,
