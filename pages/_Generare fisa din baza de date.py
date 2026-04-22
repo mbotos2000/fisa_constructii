@@ -859,7 +859,7 @@ if not(st.session_state['ut']):
                  min_value=0, max_value=int(tosi-int(slide_37a)-int(slide_37b)-int(slide_37c)-int(slide_37d)-int(slide_37e)-int(slide_37f)),
                  value=int(doc_result.body[5][3][-1][0]),
                  help='Completati de la a spre f. Suma orelor de studiu individual este blocata pe valoarea din planurile de invatamant')
-			except:
+            except:
                  slide_37a=st.slider(
                  '(a) Studiul după manual, suport de curs, bibliografie şi notițe',
                  min_value=0, max_value=int(tosi-int(slide_37a)-int(slide_37b)-int(slide_37c)-int(slide_37d)-int(slide_37e)-int(slide_37f)),
