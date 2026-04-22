@@ -885,7 +885,7 @@ if not(st.session_state['ut']):
              else:
                  if remaining<0:
                   st.write('Ai depasit numarul de ore pentru studiu individual din planul de invatamant cu ', abs(-int(slide_37a)-int(slide_37b)-int(slide_37c)-int(slide_37d)-int(slide_37e)-int(slide_37f)),' ore.')
-                else:
+                 else:
                    st.write('Trebuie sa completezi numarul de ore pentru studiu individual din planul de invatamant cu ', abs(-int(slide_37a)-int(slide_37b)-int(slide_37c)-int(slide_37d)-int(slide_37e)-int(slide_37f)),' ore.')
             except:
 				pass
