@@ -842,16 +842,7 @@ if not(st.session_state['ut']):
                         st.session_state['cap3']='1'
         if st.session_state['cap3']!=None:
             st.write('Distribuția fondului de timp (ore pe semestru)')
-            if "s37a" not in st.session_state:
-             st.session_state["s37a"] = int(data_fis['M_3_7_a'])
-            if "s37b" not in st.session_state:
-             st.session_state["s37b"] = int(data_fis['M_3_7_b'])
-            if "s37c" not in st.session_state:
-             st.session_state["s37c"] = int(data_fis['M_3_7_c'])
-            if "s37d" not in st.session_state:
-             st.session_state["s37d"] = int(data_fis['M_3_7_d'])
-            if "s37e" not in st.session_state:
-             st.session_state["s37e"] = int(data_fis['M_3_7_e'])
+
 
             tosi=data1['orestud'].loc[(data1['specializare']==st.session_state['M_1_6'])&(data1['nume_disciplina']==st.session_state['M_2_1']) ].values[0]
             defaults = {"a": int(data_fis.get("M_3_7_a", 0)),"b": int(data_fis.get("M_3_7_b", 0)),"c": int(data_fis.get("M_3_7_c", 0)),
