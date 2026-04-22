@@ -860,7 +860,7 @@ if not(st.session_state['ut']):
                  value=int(data_fis['M_3_7_a']),
                  help='Completati de la a spre f. Suma orelor de studiu individual este blocata pe valoarea din planurile de invatamant')
             else:
-                    st.write('(a) Studiul după manual, suport de curs, bibliografie şi notițe': 0 ore')
+                    st.write('(a) Studiul după manual, suport de curs, bibliografie şi notițe: 0 ore')
                     slide_37a=0
              sd=int(tosi-int(slide_37a)-int(slide_37b)-int(slide_37c)-int(slide_37d)-int(slide_37e)-int(slide_37f))
              if not(sd<=0):  
