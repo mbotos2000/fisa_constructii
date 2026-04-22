@@ -873,7 +873,7 @@ if not(st.session_state['ut']):
              else:
                     st.write('(b) Documentare suplimentară în bibliotecă, pe platforme electronice de specialitate şi pe teren: 0 ore')
                     slide_37b=0
-                    slide_37a+=-sd
+                    #slide_37a+=-sd
              sd=int(tosi-int(slide_37a)-int(slide_37b)-int(slide_37c)-int(slide_37d)-int(slide_37e)-int(slide_37f))
              if not(sd<=0): 
                  slide_37c=st.slider( 'c) Pregătire seminarii / laboratoare, teme, referate, portofolii şi eseuri',
@@ -883,7 +883,7 @@ if not(st.session_state['ut']):
              else:
                     st.write('(c) Pregătire seminarii / laboratoare, teme, referate, portofolii şi eseuri: 0 ore')
                     slide_37c=0
-                    slide_37b+=-sd
+                    #slide_37b+=-sd
              sd=int(tosi-int(slide_37a)-int(slide_37b)-int(slide_37c)-int(slide_37d)-int(slide_37e)-int(slide_37f))
              if not(sd<=0):
                  slide_37d=st.slider( '(d) Tutoriat',
@@ -893,7 +893,7 @@ if not(st.session_state['ut']):
              else:
                     st.write('(d) Tutoriat: 0 ore')
                     slide_37d=0
-                    slide_37c+=-sd
+                    #slide_37c+=-sd
              sd=int(tosi-int(slide_37a)-int(slide_37b)-int(slide_37c)-int(slide_37d)-int(slide_37e)-int(slide_37f))
              if not(sd<=0):
                  slide_37e=st.slider( 'e) Examinări',
@@ -903,7 +903,7 @@ if not(st.session_state['ut']):
              else:
                     st.write('(e) Examinări: 0 ore')
                     slide_37e=0
-                    slide_37d+=-sd
+                    #slide_37d+=-sd
              sd=int(tosi-int(slide_37a)-int(slide_37b)-int(slide_37c)-int(slide_37d)-int(slide_37e)-int(slide_37f))
              if not(sd<=0):
                    slide_37f=st.slider('(f) Alte activități:',min_value=0,
@@ -913,7 +913,7 @@ if not(st.session_state['ut']):
              else:
                     st.write('(f) Alte activități: 0 ore')
                     slide_37f=0
-                    slide_37d+=-sd
+                    #slide_37d+=-sd
             except:
                 pass			 
             st.write('Total ore studiu individual selectat', abs(-int(slide_37a)-int(slide_37b)-int(slide_37c)-int(slide_37d)-int(slide_37e)-int(slide_37f)))
