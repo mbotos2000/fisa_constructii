@@ -911,7 +911,7 @@ if not(st.session_state['ut']):
                     st.write('(f) Alte activități: 0 ore')
                     slide_37f=0
                     slide_37e+=-sd
-            except:
+           except:
                 pass
             a=st.button('Treci la capitolul 4')
 			if a:
