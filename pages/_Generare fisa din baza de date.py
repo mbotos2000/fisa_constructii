@@ -897,14 +897,12 @@ if not(st.session_state['ut']):
               schimba_M_3_7_c(slide_37c)
               schimba_M_3_7_d(slide_37d)
               schimba_M_3_7_e(slide_37e)
-              schimba_M_3_7_f(slide_37f)
-			  
+              schimba_M_3_7_f(slide_37f)			  
               st.session_state['cap4']='1'
          
             if st.session_state['cap4']!=None:
               with st.form('capitolul 4'):
-				  
-                         
+				                         
                st.text_area('4.1 Preconditii din curriculum',value=data_fis['M_4_1'],key='M_4_1',placeholder="Completati manual. Aplicatia nu a reusit sa identifice text in fisa incarcata!")
                st.text_area('4.2 Preconditii de competente',value=data_fis['M_4_2'],key='M_4_2',placeholder="Completati manual. Aplicatia nu a reusit sa identifice text in fisa incarcata!")
                st.text_area('5.1 Conditii de desfasurare a cursului',value=data_fis['M_5_1'],key='M_5_1',placeholder="Completati manual. Aplicatia nu a reusit sa identifice text in fisa incarcata!")        
@@ -930,10 +928,7 @@ if not(st.session_state['ut']):
                             ss+=d.title()+'\n'
                         
                ss=ss[:len(ss)-1]      
-               st.session_state['M_6_ct']=ss
-               
-				   
-			   #st.text_area('6.b Competente transversale',value=data_fis['M_6_ct'],key='M_6_ct',placeholder="Completati manual. Aplicatia nu a reusit sa identifice text in fisa incarcata!")            
+               st.session_state['M_6_ct']=ss            				   
                try:
                 st.text_area('7.1 Rezultatele asteptate a invatarii - Cunostiinte',value=data_fis['M_r_c'],key='M_r_c',placeholder="Completati manual. Aplicatia nu a reusit sa identifice text in fisa incarcata!")
                except:  
