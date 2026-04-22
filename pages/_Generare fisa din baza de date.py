@@ -875,18 +875,18 @@ if not(st.session_state['ut']):
             st.slider("(e) Examinări", 0, remaining(exclude=("e",)), key="s37e",)
             slide_37f = remaining()
 
-           st.write(f"(f) Alte activități: **{slide_37f} ore**")
+            st.write(f"(f) Alte activități: **{slide_37f} ore**")
 
             
-           if st.button("Treci la capitolul 4"):
-            schimba_M_3_7_a(st.session_state["s37a"])
-            schimba_M_3_7_b(st.session_state["s37b"])
-            schimba_M_3_7_c(st.session_state["s37c"])
-            schimba_M_3_7_d(st.session_state["s37d"])
-            schimba_M_3_7_e(st.session_state["s37e"])
-            schimba_M_3_7_f(slide_37f)
+            if st.button("Treci la capitolul 4"):
+             schimba_M_3_7_a(st.session_state["s37a"])
+             schimba_M_3_7_b(st.session_state["s37b"])
+             schimba_M_3_7_c(st.session_state["s37c"])
+             schimba_M_3_7_d(st.session_state["s37d"])
+             schimba_M_3_7_e(st.session_state["s37e"])
+             schimba_M_3_7_f(slide_37f)
 
-            st.session_state["cap4"] = "1"
+             st.session_state["cap4"] = "1"
          
             if st.session_state['cap4']!=None:
               with st.form('capitolul 4'):
