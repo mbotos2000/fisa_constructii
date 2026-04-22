@@ -871,11 +871,11 @@ if not(st.session_state['ut']):
                  value=int(data_fis['M_3_7_d']),
                 help='Completati de la a spre f. Suma orelor de studiu individual este blocata pe valoarea din planurile de invatamant')
 
-            slide_37e=st.slider( 'e) Examinări',
+             slide_37e=st.slider( 'e) Examinări',
                  min_value=0, max_value=tosi,
                  value=int(data_fis['M_3_7_e']),
                  help='Completati de la a spre f. Suma orelor de studiu individual este blocata pe valoarea din planurile de invatamant')
-           slide_37f=st.slider('(f) Alte activități:',min_value=0,
+             slide_37f=st.slider('(f) Alte activități:',min_value=0,
                    max_value=int(tosi-int(slide_37a)-int(slide_37b)-int(slide_37c)-int(slide_37d)-int(slide_37e)-int(slide_37f)),
                    value=int(data_fis['M_3_7_e']),
                    help='Completati de la a spre f. Suma orelor de studiu individual este cea din planurile de invatamant')
