@@ -854,70 +854,42 @@ if not(st.session_state['ut']):
              slide_37f=0
              st.write('Distribuția fondului de timp:')
              sd=int(tosi-int(slide_37a)-int(slide_37b)-int(slide_37c)-int(slide_37d)-int(slide_37e)-int(slide_37f))
-             if not(sd<=0):
-                slide_37a=st.slider('(a) Studiul după manual, suport de curs, bibliografie şi notițe',
-                 min_value=0, max_value=int(tosi-int(slide_37a)-int(slide_37b)-int(slide_37c)-int(slide_37d)-int(slide_37e)-int(slide_37f)),
-                 value=min(int(data_fis['M_3_7_a']), st.session_state.get("slide_37a", 0)),
+             slide_37a=st.slider('(a) Studiul după manual, suport de curs, bibliografie şi notițe',
+                 min_value=0, max_value=tosi,
+                 value=int(data_fis['M_3_7_a']),
                  help='Completati de la a spre f. Suma orelor de studiu individual este blocata pe valoarea din planurile de invatamant')
-             else:
-                    st.write('(a) Studiul după manual, suport de curs, bibliografie şi notițe: 0 ore')
-                    slide_37a=0
-             sd=int(tosi-int(slide_37a)-int(slide_37b)-int(slide_37c)-int(slide_37d)-int(slide_37e)-int(slide_37f))
-             if not(sd<=0):  
-                 slide_37b=st.slider('(b) Documentare suplimentară în bibliotecă, pe platforme electronice de specialitate şi pe teren',
-                  min_value=0, max_value=int(tosi-int(slide_37a)-int(slide_37b)-int(slide_37c)-int(slide_37d)-int(slide_37e)-int(slide_37f)),
+             slide_37b=st.slider('(b) Documentare suplimentară în bibliotecă, pe platforme electronice de specialitate şi pe teren',
+                 min_value=0, max_value=tosi,
                  value=int(data_fis['M_3_7_b']),
-                help='Completati de la a spre f. Suma orelor de studiu individual este blocata pe valoarea din planurile de invatamant')
-             else:
-                    st.write('(b) Documentare suplimentară în bibliotecă, pe platforme electronice de specialitate şi pe teren: 0 ore')
-                    slide_37b=0
-                    slide_37a+=-sd
-             sd=int(tosi-int(slide_37a)-int(slide_37b)-int(slide_37c)-int(slide_37d)-int(slide_37e)-int(slide_37f))
-             if not(sd<=0): 
-                 slide_37c=st.slider( 'c) Pregătire seminarii / laboratoare, teme, referate, portofolii şi eseuri',
-                 min_value=0, max_value=int(tosi-int(slide_37a)-int(slide_37b)-int(slide_37c)-int(slide_37d)-int(slide_37e)-int(slide_37f)),
+                help='Completati de la a spre f. Suma orelor de studiu individual este blocata pe valoarea din planurile de invatamant')\
+             slide_37c=st.slider( 'c) Pregătire seminarii / laboratoare, teme, referate, portofolii şi eseuri',
+                 min_value=0, max_value=tosi,
                  value=int(data_fis['M_3_7_c']),
                  help='Completati de la a spre f. Suma orelor de studiu individual este blocata pe valoarea din planurile de invatamant')
-             else:
-                    st.write('(c) Pregătire seminarii / laboratoare, teme, referate, portofolii şi eseuri: 0 ore')
-                    slide_37c=0
-                    slide_37b+=-sd
-             sd=int(tosi-int(slide_37a)-int(slide_37b)-int(slide_37c)-int(slide_37d)-int(slide_37e)-int(slide_37f))
-             if not(sd<=0):
-                 slide_37d=st.slider( '(d) Tutoriat',
-                 min_value=0, max_value=int(tosi-int(slide_37a)-int(slide_37b)-int(slide_37c)-int(slide_37d)-int(slide_37e)-int(slide_37f)),
+             slide_37d=st.slider( '(d) Tutoriat',
+                 min_value=0, max_value=tosi,
                  value=int(data_fis['M_3_7_d']),
                 help='Completati de la a spre f. Suma orelor de studiu individual este blocata pe valoarea din planurile de invatamant')
-             else:
-                    st.write('(d) Tutoriat: 0 ore')
-                    slide_37d=0
-                    slide_37c+=-sd
-             sd=int(tosi-int(slide_37a)-int(slide_37b)-int(slide_37c)-int(slide_37d)-int(slide_37e)-int(slide_37f))
-             if not(sd<=0):
-                 slide_37e=st.slider( 'e) Examinări',
-                 min_value=0, max_value=int(tosi-int(slide_37a)-int(slide_37b)-int(slide_37c)-int(slide_37d)-int(slide_37e)-int(slide_37f)),
+
+            slide_37e=st.slider( 'e) Examinări',
+                 min_value=0, max_value=tosi,
                  value=int(data_fis['M_3_7_e']),
                  help='Completati de la a spre f. Suma orelor de studiu individual este blocata pe valoarea din planurile de invatamant')
-             else:
-                    st.write('(e) Examinări: 0 ore')
-                    slide_37e=0
-                    slide_37d+=-sd
-             sd=int(tosi-int(slide_37a)-int(slide_37b)-int(slide_37c)-int(slide_37d)-int(slide_37e)-int(slide_37f))
-             if not(sd<=0):
-                   slide_37f=st.slider('(f) Alte activități:',min_value=0,
+           slide_37f=st.slider('(f) Alte activități:',min_value=0,
                    max_value=int(tosi-int(slide_37a)-int(slide_37b)-int(slide_37c)-int(slide_37d)-int(slide_37e)-int(slide_37f)),
-                   value=int(tosi-int(slide_37a)-int(slide_37b)-int(slide_37c)-int(slide_37d)-int(slide_37e)-int(slide_37f)),
+                   value=int(data_fis['M_3_7_e']),
                    help='Completati de la a spre f. Suma orelor de studiu individual este cea din planurile de invatamant')
-             else:
-                    st.write('(f) Alte activități: 0 ore')
-                    slide_37f=0
-                    slide_37e+=-sd
-            except:
-                pass			 
-            st.write('Total ore studiu individual selectat', abs(-int(slide_37a)-int(slide_37b)-int(slide_37c)-int(slide_37d)-int(slide_37e)-int(slide_37f)))
+		    remaining=tosi-int(slide_37a)-int(slide_37b)-int(slide_37c)-int(slide_37d)-int(slide_37e)-int(slide_37f))
+            if remaining==0:
+				st.write("Poti sa treci mai depeparte, ai selectat numarul corect de ore pentru studiul individual")
+			else:
+				if remaining<0:
+					st.write('Ai depasit numarul de ore pentru studiu individual din planul de invatamant cu ', abs(-int(slide_37a)-int(slide_37b)-int(slide_37c)-int(slide_37d)-int(slide_37e)-int(slide_37f)),' ore.')
+	            else:
+					st.write('Trebuie sa completezi numarul de ore pentru studiu individual din planul de invatamant cu ', abs(-int(slide_37a)-int(slide_37b)-int(slide_37c)-int(slide_37d)-int(slide_37e)-int(slide_37f)),' ore.')
 
             a=st.button('Treci la capitolul 4')
-            if a:
+            if a and remaining==0:
               st.write('Capitolul 4')
               schimba_M_3_7_a(slide_37a)
               schimba_M_3_7_b(slide_37b)
