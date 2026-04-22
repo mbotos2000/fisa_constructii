@@ -845,8 +845,7 @@ if not(st.session_state['ut']):
 			#st.session_state['M_3_8']=str(data1['orestud'].loc[(data1['specializare']==st.session_state['M_1_6'])&(data1['nume_disciplina']==st.session_state['M_2_1']) & (data1['curs']=='CURS      ')].values[0])
             try:
              tosi=data1['orestud'].loc[(data1['specializare']==st.session_state['M_1_6'])&(data1['nume_disciplina']==st.session_state['M_2_1']) ].values[0]
-			
-			 st.write('Total ore studiu individual din planul de invatamant', tosi)
+             st.write('Total ore studiu individual din planul de invatamant', tosi)
              slide_37a=0
              slide_37b=0
              slide_37c=0
