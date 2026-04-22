@@ -913,7 +913,7 @@ if not(st.session_state['ut']):
                     slide_37d+=-sd
             except:
                 pass			 
-            st.write('Total ore studiu individual selectat', abs(-int(slide_37a)-int(slide_37b)-int(slide_37c)-int(slide_37d)-int(slide_37e)-int(slide_37f))
+            st.write('Total ore studiu individual selectat', abs(-int(slide_37a)-int(slide_37b)-int(slide_37c)-int(slide_37d)-int(slide_37e)-int(slide_37f)))
 
             a=st.button('Treci la capitolul 4')
             if a:
