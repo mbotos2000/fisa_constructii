@@ -876,7 +876,7 @@ if not(st.session_state['ut']):
                  value=int(data_fis['M_3_7_e']),
                  help='Completati de la a spre f. Suma orelor de studiu individual este blocata pe valoarea din planurile de invatamant')
              slide_37f=st.slider('(f) Alte activități:',min_value=0,
-                   max_value=int(tosi-int(slide_37a)-int(slide_37b)-int(slide_37c)-int(slide_37d)-int(slide_37e)-int(slide_37f)),
+                   min_value=0, max_value=tosi,
                    value=int(data_fis['M_3_7_e']),
                    help='Completati de la a spre f. Suma orelor de studiu individual este cea din planurile de invatamant')
              remaining=tosi-int(slide_37a)-int(slide_37b)-int(slide_37c)-int(slide_37d)-int(slide_37e)-int(slide_37f)
@@ -886,7 +886,7 @@ if not(st.session_state['ut']):
                  if remaining<0:
                   st.write('Ai depasit numarul de ore pentru studiu individual din planul de invatamant cu ', abs(-int(slide_37a)-int(slide_37b)-int(slide_37c)-int(slide_37d)-int(slide_37e)-int(slide_37f)),' ore.')
                  else:
-                   st.write('Trebuie sa completezi numarul de ore pentru studiu individual din planul de invatamant cu ', abs(-int(slide_37a)-int(slide_37b)-int(slide_37c)-int(slide_37d)-int(slide_37e)-int(slide_37f)),' ore.')
+                   st.write('Trebuie sa completezi numarul de ore pentru atinge numarul de orele de studiu individual din planul de invatamant cu ', abs(-int(slide_37a)-int(slide_37b)-int(slide_37c)-int(slide_37d)-int(slide_37e)-int(slide_37f)),' ore.')
             except:
                 pass
             a=st.button('Treci la capitolul 4')
