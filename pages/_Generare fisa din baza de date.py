@@ -846,7 +846,7 @@ if not(st.session_state['ut']):
             try:
              tosi=data1['orestud'].loc[(data1['specializare']==st.session_state['M_1_6'])&(data1['nume_disciplina']==st.session_state['M_2_1']) ].values[0]
 			
-			 #st.write('Total ore studiu individual ', tosi)
+			 st.write('Total ore studiu individual din planul de invatamant', tosi)
              slide_37a=0
              slide_37b=0
              slide_37c=0
@@ -913,7 +913,9 @@ if not(st.session_state['ut']):
                     slide_37f=0
                     slide_37d+=-sd
             except:
-                pass
+                pass			 
+            st.write('Total ore studiu individual selectat', abs(-int(slide_37a)-int(slide_37b)-int(slide_37c)-int(slide_37d)-int(slide_37e)-int(slide_37f))
+
             a=st.button('Treci la capitolul 4')
             if a:
               st.write('Capitolul 4')
