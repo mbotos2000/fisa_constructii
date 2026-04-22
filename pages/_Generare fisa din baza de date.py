@@ -914,16 +914,16 @@ if not(st.session_state['ut']):
             except:
                 pass
             a=st.button('Treci la capitolul 4')
-			if a:
-			  st.write('Capitolul 4')
-			  schimba_M_3_7_a(slide_37a)
-			  schimba_M_3_7_b(slide_37b)
-			  schimba_M_3_7_c(slide_37c)
-			  schimba_M_3_7_d(slide_37d)
-			  schimba_M_3_7_e(slide_37e)
-			  schimba_M_3_7_f(slide_37f)
+            if a:
+              st.write('Capitolul 4')
+              schimba_M_3_7_a(slide_37a)
+              schimba_M_3_7_b(slide_37b)
+              schimba_M_3_7_c(slide_37c)
+              schimba_M_3_7_d(slide_37d)
+              schimba_M_3_7_e(slide_37e)
+              schimba_M_3_7_f(slide_37f)
 			  
-			  st.session_state['cap4']='1'
+              st.session_state['cap4']='1'
          
             if st.session_state['cap4']!=None:
               with st.form('capitolul 4'):
