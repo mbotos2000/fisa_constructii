@@ -861,8 +861,8 @@ if not(st.session_state['ut']):
              slide_37b=st.slider('(b) Documentare suplimentară în bibliotecă, pe platforme electronice de specialitate şi pe teren',
                  min_value=0, max_value=tosi,
                  value=int(data_fis['M_3_7_b']),
-                help='Completati de la a spre f. Suma orelor de studiu individual este blocata pe valoarea din planurile de invatamant')\
-             slide_37c=st.slider( 'c) Pregătire seminarii / laboratoare, teme, referate, portofolii şi eseuri',
+                help='Completati de la a spre f. Suma orelor de studiu individual este blocata pe valoarea din planurile de invatamant')
+             slide_37c=st.slider( '(c) Pregătire seminarii / laboratoare, teme, referate, portofolii şi eseuri',
                  min_value=0, max_value=tosi,
                  value=int(data_fis['M_3_7_c']),
                  help='Completati de la a spre f. Suma orelor de studiu individual este blocata pe valoarea din planurile de invatamant')
