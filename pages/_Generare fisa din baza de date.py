@@ -881,12 +881,12 @@ if not(st.session_state['ut']):
                    help='Completati de la a spre f. Suma orelor de studiu individual este cea din planurile de invatamant')
              remaining=tosi-int(slide_37a)-int(slide_37b)-int(slide_37c)-int(slide_37d)-int(slide_37e)-int(slide_37f)
              if remaining==0:
-				st.write("Poti sa treci mai depeparte, ai selectat numarul corect de ore pentru studiul individual")
+                 st.write("Poti sa treci mai depeparte, ai selectat numarul corect de ore pentru studiul individual")
 			 else:
 				if remaining<0:
-					st.write('Ai depasit numarul de ore pentru studiu individual din planul de invatamant cu ', abs(-int(slide_37a)-int(slide_37b)-int(slide_37c)-int(slide_37d)-int(slide_37e)-int(slide_37f)),' ore.')
+                  st.write('Ai depasit numarul de ore pentru studiu individual din planul de invatamant cu ', abs(-int(slide_37a)-int(slide_37b)-int(slide_37c)-int(slide_37d)-int(slide_37e)-int(slide_37f)),' ore.')
 	            else:
-					st.write('Trebuie sa completezi numarul de ore pentru studiu individual din planul de invatamant cu ', abs(-int(slide_37a)-int(slide_37b)-int(slide_37c)-int(slide_37d)-int(slide_37e)-int(slide_37f)),' ore.')
+                   st.write('Trebuie sa completezi numarul de ore pentru studiu individual din planul de invatamant cu ', abs(-int(slide_37a)-int(slide_37b)-int(slide_37c)-int(slide_37d)-int(slide_37e)-int(slide_37f)),' ore.')
             except:
 				pass
             a=st.button('Treci la capitolul 4')
