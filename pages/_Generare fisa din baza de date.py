@@ -590,12 +590,18 @@ def load_ftp_file():
 
     # Close FTP connection
     ftp_server.cwd('..')
-    ftp_server.cwd('./public_html/Fise/2025_r')
+    ftp_server.cwd('./public_html/Fise/2026')
 
     # Get list of .pkl files
     files = ftp_server.nlst()
     pkl_files = [f for f in files if f.endswith('.pkl')]
     pkl_1=pkl_files
+    ftp_server.cwd('..')
+    ftp_server.cwd('./2025_r')
+
+    # Get list of .pkl files
+    files = ftp_server.nlst()
+    pkl_files = pkl_files + [f for f in files if f.endswith('.pkl') and f not in pkl_1]
     ftp_server.cwd('..')
     ftp_server.cwd('./2024')
 
