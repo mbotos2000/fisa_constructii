@@ -28,14 +28,6 @@ def info():
 if st.button("Apasa aici daca doresti sa stii mai multe despre aplicatie"):
 	info()
 
-def remaining(exclude=()):
-    used = sum(
-        st.session_state[f"s37{k}"]
-        for k in ["a", "b", "c", "d", "e"]
-        if k not in exclude
-    )
-    return max(tosi - used, 0)
-
 def preprocess(text):
     return text.strip().lower().translate(str.maketrans('', '', string.punctuation))
 
