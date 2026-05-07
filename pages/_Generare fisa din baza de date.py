@@ -919,7 +919,7 @@ if not(st.session_state['ut']):
                   st.pdf(pdf_stream)
                except:
                   pass
-               add_selectbox_cp = st.multiselect('6.a Competente profesionale acumulate',competente_p[domeniu[st.session_state['M_1_4']]],help='Pot fi alese oricate competente.')
+               add_selectbox_cp = st.multiselect('6.a Competente profesionale acumulate',competente_p[st.session_state['M_1_4']],help='Pot fi alese oricate competente.')
 			                           
                ss=''
                for d in add_selectbox_cp:
@@ -928,7 +928,7 @@ if not(st.session_state['ut']):
                ss=ss[:len(ss)-1]      
                st.session_state['M_6_cp']=ss
                #st.text_area('6.a Competente profesionale acumulate',value=data_fis['M_6_cp'],key='M_6_cp',placeholder="Completati manual. Aplicatia nu a reusit sa identifice text in fisa incarcata!")              
-               add_selectbox_ct = st.multiselect('6.b Competente transversale',competente_t[domeniu[st.session_state['M_1_4']]],help='Pot fi alese oricate competente.')
+               add_selectbox_ct = st.multiselect('6.b Competente transversale',competente_t[st.session_state['M_1_4']],help='Pot fi alese oricate competente.')
                ss=''
                for d in add_selectbox_ct:
                             ss+=d.title()+'\n'
