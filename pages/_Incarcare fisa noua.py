@@ -576,6 +576,20 @@ def load_ftp_file():
         docx_files["fisa_template_Mail_aplicatie_eng.docx"],
         csv_data["lista_cd.csv"]
     )
+def load_ftp_pdf_file(presc):
+    # Establish FTP connection
+    ftp_server = ftplib.FTP_TLS("users.utcluj.ro")
+    ftp_server.login(user=st.secrets['u'], passwd=st.secrets['p'])
+    ftp_server.prot_p()
+    
+    ftp_server.encoding = "utf-8"
+    ftp_server.cwd('./public_html')
+
+    file_data = BytesIO()
+    ftp_server.retrbinary(f"RETR prezentare_{presc}.pdf", file_data.write)
+    file_data.seek(0)  # Reset pointer so Streamlit reads correctly
+    
+    return file_data  # return stream, NOT file_data.read()
 # Use a session state flag to control cache invalidation
 data,data1,_,_,_,_,_,_,data2=load_ftp_file()
 if "refresh_data" not in st.session_state:
