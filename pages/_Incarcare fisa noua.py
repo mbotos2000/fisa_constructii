@@ -498,6 +498,13 @@ specializari= {
 	    ,'Inteligenta artificiala in ing.civila si manag.constructiilor (AICIV-e)'
             ]
  }
+competente_p={'Inginerie civila':["Abordează problemele în mod critic","Ajustează proiectele produselor","Analizează nevoile comunității","Analizează traseele potențiale la proiectele de conducte","Aplică competențe de calcul numeric","Aplică competențe de comunicare în domeniul tehnic","Aplică standarde de sănătate și siguranță","Asigură conformitatea cu legislația de mediu","Asigură conformitatea cu legislația în materie de securitate","Asigură conformitatea infrastructurii de conducte","Asigură conservarea resurselor de apă","Asigură managementul de proiect","Asigură managementul proceselor de licitație","Atenuează impactul de mediu al proiectelor de conducte","Comunică cu echipele de constructori","Conduce o echipă în cadrul activităților legate de managementul apei","Dă instrucțiuni personalului","Definește cerințe tehnice","Depistează defecțiuni ale infrastructurii de conducte","Desenează schițe","Deține competențe informatice","Efectuează analiza apei","Efectuează analiza riscurilor","Elaborează previziuni statistice","Elaborează strategii de apărare împotriva inundațiilor și a fenomenelor periculoase","Elaborează studii tehnice în domeniul feroviar","Elaborează studiul de fezabilitate","Evaluează impactul de mediu","Examinează constrângerile de construcție în proiectarea arhitecturală","Examinează principii tehnice","Execută calcule matematice analitice", "Folosește instrumente de măsură","Gestionează bugete","Gestionează personalul geotehnic","Gestionează proiecte de inginerie","Gestionează proiectele de construcție a căilor ferate","Ia în calcul impactul proprietăților materialelor asupra transportului prin conducte","Identifică riscul de inundații","Integrează cerințele în materie de construcție în proiectarea arhitecturală","Integrează măsuri în proiecte arhitecturale","Înțelege terminologia financiar-bancară","Interpretează date științifice pentru a evalua calitatea apei","Întocmește rapoarte de lucru","Lucrează la proiectarea conductelor","Menține relațiile cu clienții","Menține relațiile cu furnizorii","Monitorizează șantierul","Oferă consiliere în domeniul construcțiilor","Oferă consiliere în legătură cu proiectele de irigații","Oferă consiliere pentru materiale de construcție","Oferă consiliere privind destinația terenurilor","Planifică investigații geotehnice pe teren","Proiectează conducte cu diferite învelișuri","Proiectează hărți personalizate","Proiectează lucrări de drenaj","Proiectează sisteme de energie electrică","Proiectează sisteme de transport","Promovează conștientizarea problemelor legate de mediu","Promovează proiectarea inovatoare a infrastructurii","Promovează utilizarea transportului durabil","Realizează studii privind traseele conductelor","Redactează rapoarte tehnice","Relaționează cu experți în domeniul feroviar","Respectă codul deontologic al serviciilor de transport","Respectă reglementările juridice","Satisface cerințe tehnice","Sintetizează informații","Studiază viitoarele amplasamente ale conductelor","Supraveghează proiecte de construcții","Supraveghează siguranța mediului de lucru","Utilizează diferite canale de comunicare","Utilizează software CAD","Utilizează software de desen tehnic"],
+				'Inginerie geodezica':["Compară datele studiilor","Efectuează topografiere","Ajustează echipamente de topografie","Înregistrează date topografice","Efectuează calcule de topografie","Documentează operațiuni de topografiere","Utilizează software de desen tehnic","Operează instrumente de topografiere","Stabilește limitele proprietății","Pregătește raportul de supraveghere","Ajustează proiectele produselor","Asigură conformitatea cu legislația în materie de securitate","Creează rapoarte GIS","Întocmește rapoarte de lucru","Supraveghează personal","Ține evidențe ale operațiunilor miniere","Creează hărți tematice","Prezintă rapoarte","Prelucrează date topografice colectate","Menține planurile sitului minier","Gestionează date privind siturile miniere","Colectează date cartografice","Execută calcule matematice analitice","Compilează date GIS","Folosește sisteme informaționale geografice","Aplică tehnici de analiză statistică","Utilizează baze de date","Creează hărți cadastrale","Utilizează tehnologii geospațiale","Utilizează software CAD","Utilizează sisteme GPS","Calibrează instrumente electronice","Revizuiește autorizații de construcție","Utilizează tehnici de prelucrare a datelor","Gestionează cadastrul","Creează imagini digitale","Creează medii 3D","Elaborează studiul de fezabilitate","Oferă consiliere privind destinația terenurilor","Oferă expertiză tehnică","Promovează sustenabilitatea","Asigură managementul de proiect","Monitorizează conformitatea parametrilor în proiecte de construcții"],
+				'Inginerie si management':["Gestionează proiecte de inginerie","Examinează constrângerile de construcție în proiectarea arhitecturală","Integrează cerințele de construcție în proiectarea arhitecturală","Interpretează măsuri în proiecte arhitecturale","Satisface cerințe tehnice","Comunică cu echipele de constructori","Aplică competențe de calcul numeric","Monitorizează șantierul","Supraveghează proiecte de construcții","Elaborează studiul de fezabilitate","Definește cerințe tehnice","Oferă consiliere în domeniul construcțiilor","Execută calcule matematice analitice","Desenează schițe","Utilizează software CAD","Dă instrucțiuni personalului","Aplică competențe de comunicare în domeniul tehnic","Utilizează diferite canale de comunicare","Interacționează profesional în mediile de cercetare și profesionale","Utilizează software pentru producție asistată de calculator","Aprobă proiecte de inginerie","Utilizează software de desen tehnic","Respectă reglementările juridice","Dă dovadă de expertiză disciplinară","Păstrează înregistrări financiare","Înțelege terminologia financiar-bancară","Deține competențe informatice","Efectuează analiza riscurilor","Asigură managementul de proiect","Gândește în mod abstract","Menține relațiile cu furnizorii","Menține relațiile cu clienții","Folosește instrumente de măsurare","Asigură managementul proceselor de licitație","Gestionează dezvoltarea profesională personală","Gestionează bugete","Evaluează impactul de mediu","Redactează rapoarte tehnice","Supraveghează siguranța mediului de lucru","Elaborează previziuni statistice","Sintetizează informații"]}
+competente_t={'Inginerie civila':["Da dovadă de inițiativă","Adoptă modalități de promovare a biodiversității și a bunăstării animalelor","Oferă consiliere altora","Acceptă critici și orientări","Aplică cunoștințe de filozofie, etică și religie","Adoptă modalități de reducere a poluării","Respectă angajamente","Se adaptează la cerințe fizice","Își asumă responsabilitatea","Dă dovadă de hotărâre","Efectuează calcule","Gestionează frustrarea","Calculează probabilități","Gestionează resurse financiare și materiale","Demonstrează angajament","Gândește rapid","Evaluează impactul comportamentului individual asupra mediului","Conduce controlul calității","Dă dovadă de auto-reflecție","Dă dovadă de curiozitate","Gestionează evoluția personală","Abordează provocările în mod pozitiv","Gândește analitic","Se adaptează la schimbare","Adoptă modalități de reducere a impactului negativ al consumului","Menține bunăstarea psihologică","Protejează sănătatea celorlalți","Asigură orientarea către client","Moderează discuții","Aplică cunoștințe științifice, tehnologice și inginerești","Prelucrează informații spațiale","Respectă diversitatea valorilor și a normelor culturale","Face față incertitudinii","Se adresează unui public","Lucrează în echipe","Arată încredere","Instruiește pe ceilalți","Operează echipamente hardware digitale","Organizează informații, obiecte și resurse","Interpretează informații matematice","Demonstrează loialitate","Îi conduce pe alții","Arată empatie","Negociază compromisuri","Face față stresului","Lucrează eficient","Participă activ la viața civică", "Gândește critic","Îi implică pe ceilalți în comportamente favorabile mediului","Este atent la detalii","Utilizează în cunoștință de cauză sistemul de sănătate","Promovează principiile democrației și ale statului de drept","Se exprimă într-un mod creativ","Soluționează conflicte","Apreciază diversitatea expresiilor culturale și artistice","Dă dovadă de dorință de învățare","Utilizează cu precizie echipamente, instrumente sau echipamente tehnologice","Își menține concentrarea pentru perioade lungi de timp","Identifică probleme","Își menține aptitudinile fizice","Soluționează probleme","Deleagă responsabilități","Utilizează software de comunicare și colaborare","Construiește spirit de echipă","Improvizează","Respectă reglementările","Deplasează obiecte","Efectuează căutări pe internet","Administrează identitatea digitală","Demonstrează credibilitate","Demonstrează spirit antreprenorial","Raportează fapte","Aplică competențe de bază în materie de programare","Creează rețele","Dă dovadă de competență interculturală","Lucrează independent","Gândește în mod inovator","Demonstrează conștientizarea riscurilor pentru sănătate","Gândește în mod creativ","Gândește holistic","Ia decizii","Creează conținut digital","Gestionează timpul","Aplică standarde de igienă","Evaluează în mod critic informațiile și sursele acestora","Gestionează bolile cronice","Aplică cunoștințe în domeniul științelor sociale și umaniste","Promovează idei, produse sau servicii","Îi motivează pe alții","Respectă obligațiile de confidențialitate","Planifică","Reacționează la schimbări fizice sau pericole","Aplică măsuri de securitate digitală","Își exercită drepturile și responsabilitățile","Memorează informații","Are o minte deschisă"],
+				'Inginerie geodezica':["Gândește analitic","Dă dovadă de inițiativă","Respectă reglementările","Soluționează probleme","Utilizează software de comunicare și colaborare","Aplică cunoștințe științifice, tehnologice și inginerești","Utilizează cu precizie echipamente, instrumente sau echipamente tehnologice"],
+				'Inginerie si management':["Dă dovadă de inițiativă", "Își asumă responsabilitatea","Gândește analitic","Lucrează în echipe","Gândește critic","Soluționează probleme"]}
+
 directori = {
   'Mecanica constructiilor':'conf.dr.ing. Anca-Gabriela POPA',
   'Constructii civile si management':'conf.dr.ing. Claudiu ACIU',
@@ -941,19 +948,40 @@ if st.session_state['file']!=None or st.session_state['ut']:
         text_p=text_p[:len(text_p)-1]
       except:
         text_p=''
-      text_6_1=st.text_area('6.a Competente profesionale acumulate',value=text_c,key='M_6_cp',placeholder="Completati manual. Aplicatia nu a reusit sa identifice text in fisa incarcata!")
+      try:
+         with st.expander("Arată prezentarea planului de invatamant pentru a completa urmatoarea sectiune in concordanta cu principiile definite in misiunea specializarii pentru care scriu aceasta fisa"):
+            pdf_stream=(load_ftp_pdf_file(pres[st.session_state['M_1_6']]))
+            st.pdf(pdf_stream)
+      except:
+         pass
+      add_selectbox_cp = st.multiselect('6.a Competente profesionale acumulate',competente_p[st.session_state['M_1_4']],help='Pot fi alese oricate competente.')
+			                           
+      ss=''
+      for d in add_selectbox_cp:
+          ss+=d.title()+'\n'
+                        
+      ss=ss[:len(ss)-1]      
+      st.session_state['M_6_cp']=ss
+               #st.text_area('6.a Competente profesionale acumulate',value=data_fis['M_6_cp'],key='M_6_cp',placeholder="Completati manual. Aplicatia nu a reusit sa identifice text in fisa incarcata!")              
+      add_selectbox_ct = st.multiselect('6.b Competente transversale',competente_t[st.session_state['M_1_4']],help='Pot fi alese oricate competente.')
+      ss=''
+      for d in add_selectbox_ct:
+         ss+=d.title()+'\n'
+      ss=ss[:len(ss)-1]      
+      st.session_state['M_6_ct']=ss          
+	  #text_6_1=st.text_area('6.a Competente profesionale acumulate',value=text_c,key='M_6_cp',placeholder="Completati manual. Aplicatia nu a reusit sa identifice text in fisa incarcata!")
       
-      text_6_2=st.text_area('6.b Competente transversale',value=text_p,key='M_6_ct',placeholder="Completati manual. Aplicatia nu a reusit sa identifice text in fisa incarcata!")
+      #text_6_2=st.text_area('6.b Competente transversale',value=text_p,key='M_6_ct',placeholder="Completati manual. Aplicatia nu a reusit sa identifice text in fisa incarcata!")
       try:
         c71=parcurge(13,0,1,0)
       except:
         c71=''      
-      text_7_1=st.text_area('7.1 Obiectivul general al disciplinei',value=c71,key='M_7_1',placeholder="Completati manual. Aplicatia nu a reusit sa identifice text in fisa incarcata!")
+      text_7_1=st.text_area('8.1 Obiectivul general al disciplinei',value=c71,key='M_7_1',placeholder="Completati manual. Aplicatia nu a reusit sa identifice text in fisa incarcata!")
       try:
         c73=parcurge(13,1,1,0)
       except:
         c73=''
-      text_7_2=st.text_area('7.2 Obiectivele specifice',value=c73,key='M_7_2',placeholder="Completati manual. Aplicatia nu a reusit sa identifice text in fisa incarcata!")
+      text_7_2=st.text_area('8.2 Obiectivele specifice',value=c73,key='M_7_2',placeholder="Completati manual. Aplicatia nu a reusit sa identifice text in fisa incarcata!")
       #st.write(doc_result.body[15])
       if st.session_state['test_curs']:
           try:
@@ -1180,42 +1208,42 @@ if st.session_state['file']!=None or st.session_state['ut']:
         c9=parcurge(17,0,0,0)
       except:
         c9=''
-      text_9=st.text_area('9. Coroborarea conținuturilor disciplinei cu așteptările reprezentanţilor comunităţii epistemice, a.p. s.a.m.d. din domeniul aferent programului',value=c9,key='M_9')
+      text_9=st.text_area('10. Coroborarea conținuturilor disciplinei cu așteptările reprezentanţilor comunităţii epistemice, a.p. s.a.m.d. din domeniul aferent programului',value=c9,key='M_9')
       try:
         c101=parcurge(19,1,1,0)
       except:
         c101=''
-      text_10_1=st.text_area('10.1 Criterii de evaluare curs',value=c101,key='M_10_1_c',placeholder="Completati manual. Aplicatia nu a reusit sa identifice text in fisa incarcata!")
+      text_10_1=st.text_area('11.1 Criterii de evaluare curs',value=c101,key='M_10_1_c',placeholder="Completati manual. Aplicatia nu a reusit sa identifice text in fisa incarcata!")
       try:
         c102=parcurge(19,1,2,0)
       except:
         c102=''
-      text_10_2=st.text_area('10.2 Metode de evaluare curs',value=c102,key='M_10_2_c',placeholder="Completati manual. Aplicatia nu a reusit sa identifice text in fisa incarcata!")
+      text_10_2=st.text_area('11.2 Metode de evaluare curs',value=c102,key='M_10_2_c',placeholder="Completati manual. Aplicatia nu a reusit sa identifice text in fisa incarcata!")
       try:
         c1021=parcurge(19,2,1,0)
       except:
         c1021=''
-      text_10_2_1=st.text_area('10.1.1 Criterii de evaluare aplicatii',value=c1021,key='M_10_1_a',placeholder="Completati manual. Aplicatia nu a reusit sa identifice text in fisa incarcata!")
+      text_10_2_1=st.text_area('11.1.1 Criterii de evaluare aplicatii',value=c1021,key='M_10_1_a',placeholder="Completati manual. Aplicatia nu a reusit sa identifice text in fisa incarcata!")
       try:
         c1022=parcurge(19,2,2,0)
       except:
         c1022=''      
-      text_10_2_2=st.text_area('10.2 Metode de evaluare aplicatii',value=c1022,key='M_10_2_a',placeholder="Completati manual. Aplicatia nu a reusit sa identifice text in fisa incarcata!")
+      text_10_2_2=st.text_area('11.2 Metode de evaluare aplicatii',value=c1022,key='M_10_2_a',placeholder="Completati manual. Aplicatia nu a reusit sa identifice text in fisa incarcata!")
       try:
         c103=parcurge(19,1,3,0)
       except:
         c103=''      
-      text_10_3=st.text_area('10.3 Ponderea notei la curs in nota finala',value=c103,key='M_10_3_c',placeholder="Completati manual. Aplicatia nu a reusit sa identifice text in fisa incarcata!")
+      text_10_3=st.text_area('11.3 Ponderea notei la curs in nota finala',value=c103,key='M_10_3_c',placeholder="Completati manual. Aplicatia nu a reusit sa identifice text in fisa incarcata!")
       try:
         c1032=parcurge(19,2,3,0)
       except:
         c1032=''      
-      text_10_3_2=st.text_area('10.3.1 Ponderea notei la aplicatii in nota finala',value=c1032,key='M_10_3_a',placeholder="Completati manual. Aplicatia nu a reusit sa identifice text in fisa incarcata!")
+      text_10_3_2=st.text_area('11.3.1 Ponderea notei la aplicatii in nota finala',value=c1032,key='M_10_3_a',placeholder="Completati manual. Aplicatia nu a reusit sa identifice text in fisa incarcata!")
       try:
         cst=parcurge(19,4,0,0)
       except:
         cst=''      
-      text_st=st.text_area('10.6 Standard minim de performanţă',value=cst,key='M_10_6',placeholder="Completati manual. Aplicatia nu a reusit sa identifice text in fisa incarcata!")
+      text_st=st.text_area('11.6 Standard minim de performanţă',value=cst,key='M_10_6',placeholder="Completati manual. Aplicatia nu a reusit sa identifice text in fisa incarcata!")
       #d_com=st.date_input("Data completarii",date.today())
       d_com=date.today()
       d_dep=st.date_input("Data avizari in departament",date.today())
