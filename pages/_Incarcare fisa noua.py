@@ -540,7 +540,7 @@ def load_ftp_file():
 
     # Download CSV files
     csv_data = {}
-    for filename in ["lista_cd.csv", "planinv_2025.csv","lista_cd.csv"]:
+    for filename in ["lista_cd.csv", "planinv_2025_v2.csv","lista_cd.csv"]:
         with BytesIO() as file_data:
             ftp_server.retrbinary(f"RETR {filename}", file_data.write)
             file_data.seek(0)  # Reset file pointer to the start
@@ -567,7 +567,7 @@ def load_ftp_file():
     # Return downloaded files
     return (
         csv_data["lista_cd.csv"], 
-        csv_data["planinv_2025.csv"], 
+        csv_data["planinv_2025_v2.csv"], 
         docx_files["fisa_template_Mail_.docx"], 
         docx_files["fisa_template_Mail_eng.docx"], 
         docx_files["fisa_template_Mail_curs_.docx"], 
