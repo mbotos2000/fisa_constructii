@@ -627,9 +627,9 @@ def load_ftp_file():
         docx_files["fisa_template_Mail_R.docx"], 
         docx_files["fisa_template_Mail_eng.docx"], 
         docx_files["fisa_template_Mail_curs_R.docx"], 
-        docx_files["fisa_template_Mail_curs_eng.docx"], 
+        docx_files["fisa_template_Mail_curs_R.docx"], 
         docx_files["fisa_template_Mail_aplicatie_R.docx"], 
-        docx_files["fisa_template_Mail_aplicatie_eng.docx"],
+        docx_files["fisa_template_Mail_aplicatie_R.docx"],
         csv_data["lista_cd.csv"],pkl_files
     )
 
