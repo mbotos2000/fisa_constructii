@@ -549,11 +549,11 @@ def load_ftp_file():
     # Download DOCX templates
     docx_files = {}
     for filename in [
-        "fisa_template_Mail_.docx", 
+		"fisa_template_Mail_R.docx", 
         "fisa_template_Mail_eng.docx", 
-        "fisa_template_Mail_curs_.docx",
+        "fisa_template_Mail_curs_R.docx",
         "fisa_template_Mail_curs_eng.docx",
-        "fisa_template_Mail_aplicatie_.docx",
+        "fisa_template_Mail_aplicatie_R.docx",
         "fisa_template_Mail_aplicatie_eng.docx"
     ]:
         file_data = BytesIO()
@@ -568,12 +568,12 @@ def load_ftp_file():
     return (
         csv_data["lista_cd.csv"], 
         csv_data["planinv_2025_v2.csv"], 
-        docx_files["fisa_template_Mail_.docx"], 
+        docx_files["fisa_template_Mail_R.docx"], 
         docx_files["fisa_template_Mail_eng.docx"], 
-        docx_files["fisa_template_Mail_curs_.docx"], 
-        docx_files["fisa_template_Mail_curs_eng.docx"], 
-        docx_files["fisa_template_Mail_aplicatie_.docx"], 
-        docx_files["fisa_template_Mail_aplicatie_eng.docx"],
+        docx_files["fisa_template_Mail_curs_R.docx"], 
+        docx_files["fisa_template_Mail_curs_R.docx"], 
+        docx_files["fisa_template_Mail_aplicatie_R.docx"], 
+        docx_files["fisa_template_Mail_aplicatie_R.docx"],
         csv_data["lista_cd.csv"]
     )
 def load_ftp_pdf_file(presc):
