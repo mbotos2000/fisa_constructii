@@ -734,7 +734,8 @@ if not(st.session_state['ut']):
             st.error(f"Error loading file: {e}")
 
           st.write(data_fis['M_1_3'])
-          st.session_state['dir_dep']=directori[data_fis['M_1_3']]          nume_tit = data['nume'].tolist()
+          st.session_state['dir_dep']=directori[data_fis['M_1_3']]          
+          nume_tit = data['nume'].tolist()
          
           st.title("Fisa disciplinei")
           
