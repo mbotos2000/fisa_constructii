@@ -546,7 +546,15 @@ directori = {
   'Cai ferate, drumuri si poduri':'conf.dr.ing. Mihai Liviu DRAGOMIR',
   'Matematica':'prof. dr. Vasile-Dorian Popa',
   'Fizica':'prof. dr. Petru Pascuta',
-  'Limbi straine':'conf.dr. Ruxanda Literat'}
+  'Limbi straine':'conf.dr. Ruxanda Literat',
+  'Structural Mechanics':'conf.dr.ing. Anca-Gabriela POPA',
+  'Buildings and Management':'conf.dr.ing. Claudiu ACIU',
+  'Structures':'conf.dr.ing. Attila Puskas',
+  'Land Measurements and Cadastre':'conf.dr.ing. Sanda NAS',
+  'Railways, Roads and Bridges ':'conf.dr.ing. Mihai Liviu DRAGOMIR',
+  'Mathematics':'prof. dr. Vasile-Dorian Popa',
+  'Physics':'prof. dr. Petru Pascuta',
+  'Languages':'conf.dr. Ruxanda Literat'}
 decan= {
   'Constructii':'prof.dr.ing Daniela Lucia Manea',
   'Mecanica':'',
