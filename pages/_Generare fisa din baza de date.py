@@ -1005,6 +1005,7 @@ if not(st.session_state['ut']):
                submitted= st.form_submit_button("finalizeaza")
                if submitted:
                 #schimba_decan(decan[add_select])
+		        st.write(data_fis['M_1_3'])
                 st.session_state['dir_dep']=directori[data_fis['M_1_3']]
                 st.session_state['data_dep']=str(d_dep)
                 #schimba_fac(add_select)
