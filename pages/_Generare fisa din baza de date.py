@@ -733,8 +733,8 @@ if not(st.session_state['ut']):
            except Exception as e:
             st.error(f"Error loading file: {e}")
 
-        
-          nume_tit = data['nume'].tolist()
+          st.write(data_fis['M_1_3'])
+          st.session_state['dir_dep']=directori[data_fis['M_1_3']]          nume_tit = data['nume'].tolist()
          
           st.title("Fisa disciplinei")
           
