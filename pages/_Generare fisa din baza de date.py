@@ -1030,21 +1030,31 @@ if not(st.session_state['ut']):
                                                 _,_,template,_,_,_,_,_,_,_=load_ftp_file()
                     else:
                         _,_,_,template,_,_,_,_,_,_=load_ftp_file()
-                        st.session_state['M_1_3']=departamentele[data_fis['M_1_3']]
+						try:
+                         st.session_state['M_1_3']=departamentele[data_fis['M_1_3']]
+						except:
+                         st.session_state['M_1_3']=data_fis['M_1_3']
+
                 if bool(st.session_state['test_curs'])& (not(bool(st.session_state['test_aplicatie']))):
                     if st.session_state['M_1_4']!='Inginerie_civila':
 					#st.session_state['M_1_6']!='Constructii civile, industriale si agricole (CCIA-eng)' or st.session_state['M_1_6']!='Inteligenta artificiala in ing.civila si manag.constructiilor (AICIV-e) ':
                                                _,_,_,_,template,_,_,_,_,_=load_ftp_file()
                     else:
                         _,_,_,_,_,template,_,_,_,_=load_ftp_file()
-                        st.session_state['M_1_3']=departamentele[data_fis['M_1_3']]
+						try:
+                         st.session_state['M_1_3']=departamentele[data_fis['M_1_3']]
+						except:
+                         st.session_state['M_1_3']=data_fis['M_1_3']
                 if (not(bool(st.session_state['test_curs'])))& bool(st.session_state['test_aplicatie']):
                     if st.session_state['M_1_4']!='Inginerie_civila':
 					#st.session_state['M_1_6']!='Constructii civile, industriale si agricole (CCIA-eng)' or st.session_state['M_1_6']!='Inteligenta artificiala in ing.civila si manag.constructiilor (AICIV-e) ':
                         _,_,_,_,_,_,template,_,_,_=load_ftp_file()
                     else:
                         _,_,_,_,_,_,_,template,_,_=load_ftp_file()
-                        st.session_state['M_1_3']=departamentele[data_fis['M_1_3']]
+						try:
+                         st.session_state['M_1_3']=departamentele[data_fis['M_1_3']]
+						except:
+                         st.session_state['M_1_3']=data_fis['M_1_3']
                 st.session_state['M_1_3']=data_fis['M_1_3']
                 st.session_state['M_1_2']=data_fis['M_1_2']
                 document = MailMerge(template)
