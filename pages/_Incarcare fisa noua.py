@@ -892,7 +892,7 @@ if st.session_state['file']!=None or st.session_state['ut']:
       help='Completati de la a spre f. Suma orelor de studiu individual este blocata pe valoarea din planurile de invatamant')
     remaining=tosi-int(slide_37a)-int(slide_37b)-int(slide_37c)-int(slide_37d)-int(slide_37e)-int(slide_37f)
     if remaining==0:
-      st.write("Poti sa treci mai depeparte, ai selectat numarul corect de ore pentru studiul individual")
+      st.write("Poti sa treci mai departe, ai selectat numarul corect de ore pentru studiul individual")
     else:
        if remaining<0:
           st.write('Ai depasit numarul de ore pentru studiu individual din planul de invatamant cu ', abs(tosi-abs(-int(slide_37a)-int(slide_37b)-int(slide_37c)-int(slide_37d)-int(slide_37e)-int(slide_37f))),' ore.')
