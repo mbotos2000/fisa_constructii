@@ -984,7 +984,20 @@ if st.session_state['file']!=None or st.session_state['ut']:
       for d in add_selectbox_ct:
          ss+=d.title()+'\n'
       ss=ss[:len(ss)-1]      
-      st.session_state['M_6_ct']=ss          
+      st.session_state['M_6_ct']=ss
+      try:
+       st.text_area('7.1 Rezultatele asteptate a invatarii - Cunostiinte',value=data_fis['M_r_c'],key='M_r_c',placeholder="Completati manual. Aplicatia nu a reusit sa identifice text in fisa incarcata!")
+      except:  
+       st.text_area('7.1 Rezultatele asteptate a invatarii - Cunostiinte',key='M_r_c',placeholder="Completati manual. Aplicatia nu a reusit sa identifice text in fisa incarcata!")
+      try:			  
+       st.text_area('7.2 Rezultatele asteptate a invatarii - Abilitati',value=data_fis['M_r_a'],key='M_r_a',placeholder="Completati manual. Aplicatia nu a reusit sa identifice text in fisa incarcata!")
+      except:
+       st.text_area('7.2 Rezultatele asteptate a invatarii - Abilitati',key='M_r_a',placeholder="Completati manual. Aplicatia nu a reusit sa identifice text in fisa incarcata!")
+      try:
+       st.text_area('7.3 Rezultatele asteptate a invatarii - Responsabilitatea si autonomie',value=data_fis['M_r_r'],key='M_r_r',placeholder="Completati manual. Aplicatia nu a reusit sa identifice text in fisa incarcata!")
+      except:
+       st.text_area('7.3 Rezultatele asteptate a invatarii - Responsabilitatea si autonomie',key='M_r_r',placeholder="Completati manual. Aplicatia nu a reusit sa identifice text in fisa incarcata!")
+               
 	  #text_6_1=st.text_area('6.a Competente profesionale acumulate',value=text_c,key='M_6_cp',placeholder="Completati manual. Aplicatia nu a reusit sa identifice text in fisa incarcata!")
       
       #text_6_2=st.text_area('6.b Competente transversale',value=text_p,key='M_6_ct',placeholder="Completati manual. Aplicatia nu a reusit sa identifice text in fisa incarcata!")
