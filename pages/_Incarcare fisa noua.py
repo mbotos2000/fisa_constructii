@@ -614,7 +614,7 @@ if st.session_state['file']!=None or st.session_state['ut']:
    
   nume_tit = data['nume'].tolist()
  
-  st.title("Fisa disciplinei - 2025/2026")
+  st.title("Fisa disciplinei - 2026/2027")
   st.write('{:%d-%b-%Y}'.format(date.today()))
 
   with st.form('Fisa disciplinei pentru Facultatea de constructii - 2025/2026'):
