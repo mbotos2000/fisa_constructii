@@ -1007,7 +1007,7 @@ if not(st.session_state['ut']):
                st.text_area('11.6 Standard minim de performanţă',data_fis['M_10_6'],key='M_10_6',placeholder="Completati manual. Aplicatia nu a reusit sa identifice text in fisa incarcata!")
               #d_com=st.date_input("Data completarii",date.today())
 
-               d_com=date.today()
+               d_com=st.date_input("Data completarii",date.today())
                d_dep=st.date_input("Data avizari in departament",date.today())
                d_fac=st.date_input("Data avizari in consiliul facultatii",date.today())
                submitted= st.form_submit_button("finalizeaza")
